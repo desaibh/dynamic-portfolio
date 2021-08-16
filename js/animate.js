@@ -243,10 +243,10 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
 				this.vy = -this.vy *friction;
 				this.vx = this.vx*friction;
 			} else {
-			    this.vy += gravity;
+			    //this.vy += gravity;
 			} 
 			if ((this.vy == 0) && (this.y - this.radius < 0)) {
-				this.vy += gravity;
+				//this.vy += gravity;
 			} 
 	
 			if (this.x + this.radius > ctx.width || this.x - this.radius <= 0) {
