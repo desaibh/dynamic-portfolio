@@ -216,7 +216,8 @@ article {
 	position: absolute;
 	top: 0;
 	right: 0;
-
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
 }
 
 
@@ -229,6 +230,7 @@ section {
 	align-items: center;
 	display: flex;
 	flex-direction: column;
+	scroll-snap-align: start;	
 }
 
 
@@ -737,8 +739,12 @@ div.resumetopics div.cb div:nth-child(3) {
 }
 .modal-content h4, strong {
 	color: var(--secondary);
-	margin: 20px auto ;
+	margin: 20px auto;
+}	
+#home > div > div.card > div.content > p:nth-child(1) > strong {
+	color: var(--text);
 }
+
 #experience ul {
   margin-bottom: 40px;
   list-style-position: inside;
@@ -782,7 +788,7 @@ div.resumetopics div.cb div:nth-child(3) {
   box-shadow: inset 24px 8px 24px 2px rgba(0,0,255, .8);
 }
 
-section#resume div.container div.subsections div a {
+section#resume div.container div.subsections div a, #hobbies .content .boxes .box {
   color: var(--tertiary);
 	
 }

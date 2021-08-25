@@ -240,7 +240,7 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
 		   //var gravity = Math.random()*.2;		
 		  
 			if (this.y + this.radius  + this.vy > ctx.height ||  this.y - this.radius + this.vy < 0 ) {
-				this.vy = -this.vy *friction;
+				this.vy = -this.vy*friction;
 				this.vx = this.vx*friction;
 			} else {
 			    //this.vy += gravity;
@@ -255,6 +255,8 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
 	
 			if  (Math.sqrt(Math.pow((mouse.x - this.x),2) + Math.pow((mouse.y-this.y),2)) < 120) {
 				this.opacity += 0.02;
+			} else if (this.opacity > 0) {
+				this.opacity -= 0.02;
 			}
 	
 	
@@ -417,6 +419,7 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
 	  resumeSubsections[n].prepend(nswap);
 	  resumeSubsections[n].style.display = "none";
   }
+  
  for (p=0; p<resumeTopics.length;p++){
 	 pswap = "<div class='text'>" + resumeTopics[p].innerHTML + "</div>";
 	 resumeTopics[p].innerHTML= pswap;
