@@ -363,7 +363,7 @@ section {
 }
 #portfolios .container .projects-container .toggler {
     color: var(--tertiary);
-    background: var(--secondary);
+    background: var(--quarternary);
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -633,6 +633,7 @@ div.resumetopics div.cb {
     transform-style: preserve-3d;
     transform: rotateX(125deg) rotateY(45deg) translate(50%, 10%);
 	}
+
 div.resumetopics div.cb .text p {
     font-size: 35px;
     font-family: 'Allerta Stencil', 'Stardos Stencil', monospace, cursive;
@@ -666,6 +667,9 @@ div.resumetopics div.cb div {
 div.resumetopics div.cb:last-child {
 margin-top:-461px;
 z-index: 0;
+}
+div.resumetopics div.cb:last-child:hover {
+    margin-top: -591px;
 }
 div.resumetopics div.cb:nth-child(3), div.resumetopics div.cb:nth-child(4) {
 margin-top:-116px;
@@ -788,18 +792,32 @@ div.resumetopics div.cb div:nth-child(3) {
   box-shadow: inset 24px 8px 24px 2px rgba(0,0,255, .8);
 }
 
-section#resume div.container div.subsections div a, #hobbies .content .boxes .box {
-  color: var(--tertiary);
+section#resume div.container div.subsections div a {
+  color: var(--background);
 	
 }
+#hobbies .content .boxes .box {
+    font-size: 19px;
+    color: var(--secondary);
+    font-weight: 300;
+    font-family: 'Allerta Stencil', 'Stardos Stencil', monospace, cursive;
 
+}
+#hobbies .content .boxes .unbox p {
+	margin-bottom: 20px;
+}
+#hobbies .content .boxes .unbox ul {
+	padding-left: 40px;
+	margin-top: 0px;
+	margin-bottom: 20px;
+}
 #contact .callout {
 	    width: 100wv;
 		height: 70vh;
 		margin: 10vh 10vw;
 		padding: 10vh 10vw;
 		box-shadow: 0 0 0 5px var(--secondary), 0 0 0 10px var(--tertiary), 0 0 0 15px var(--quarternary), 0 0 0 20px var(--quinary);
-		background: black;
+		background: var(--radial-gradient);
 
 	}
 
