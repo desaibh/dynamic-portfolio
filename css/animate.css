@@ -817,7 +817,7 @@ section#resume div.container div.subsections div a {
 		margin: 10vh 10vw;
 		padding: 10vh 10vw;
 		box-shadow: 0 0 0 5px var(--secondary), 0 0 0 10px var(--tertiary), 0 0 0 15px var(--quarternary), 0 0 0 20px var(--quinary);
-		background: var(--radial-gradient);
+		background: var(--quarternary);
 
 	}
 

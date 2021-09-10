@@ -118,7 +118,7 @@ for (d = 0; d < chevron.length; d++) {
 			nowActive = e.path[1].dataset.slideTo;
 			var vw = Math.max(document.documentElement.clientWidth);
 			if  (vw > 500) {
-				transitionCalculation = nowActive * -474;
+				transitionCalculation = nowActive * -464;
 			} else {
 				transitionCalculation = nowActive * -720;
 			}
@@ -219,7 +219,7 @@ for  (h = 0; h < skillsbox.length; h++) {
 
 // RESUME - SKILLS EXPAND/COLLAPSE
 
-var j, k, m, n, p,q;
+var j, k, m, n, p, q;
 var skillsHeading = document.querySelectorAll('#skills-sub-types h4');
 var experienceHeading = document.querySelectorAll('#experience div p');
 var educationHeading = document.querySelectorAll('#education div h4');
@@ -251,4 +251,18 @@ for (n = 0;  n < hobbiesHeading.length; n++) {
 	   	   this.nextSibling.nextSibling.classList.toggle("block");
 	});
 }
+
+/*COLOR PICKER*/
+var palette = document.createElement('div');
+palette.setAttribute('id','palette');
+palette.innerHTML = '<input type="color" id="c" tabindex=-1 class="hidden"> <i class="fas fa-palette"></i>';
+document.body.appendChild(palette);
+
+document.getElementById("palette").addEventListener("click", function() {
+  document.getElementById("c").focus();
+  document.getElementById("c").addEventListener('blur', function(e) {
+	  document.documentElement.style.setProperty('--background', e.target.value);
+  });
+  document.getElementById("c").click();
+});
 

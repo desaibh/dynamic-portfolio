@@ -1,11 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
 
+:root {
+  --background: #151d3c;
+  --text: white;
+  --accent: #63cdff;
+  --primary: #060c21;
+  --border: black;
+}
+
 body {
 	margin: 0px;
 	padding: 0px;
 	font-family: 'Josefin Sans', Monotype, sans-serif;
 	overflow-x: hidden;
-	background: #151d3c;
+	background: var(--background);
 	box-sizing: border-box;
 }
 h1, h2, h3, h4, p {
@@ -15,11 +23,11 @@ h1, h2, h3, h4, p {
 	position: relative;
 }
 a, a:visited {
-	color:  #63cdff;
+	color:  var(--accent);
 }
 a:hover, a.active {
-    color: #63cdff;
-    text-shadow: 0 0 2px #63cdff;
+    color: ;
+    text-shadow: 0 0 2px var(--accent);
 	transition: text-shadow 1s;
 }
 ul li, .box3 {
@@ -39,7 +47,7 @@ header {
     text-align: center;
     width: 100vw;
 	z-index: 100;
-	background: #151d3c;
+	background: var(--background);
 }
 header .container {
 	display: flex;
@@ -58,12 +66,12 @@ header .container {
 }
 #navlogo p {
     font-family: "Josephin Sans";
-    background-color: #6c7185;
-    color: black;
+    background-color: rgba(255,255,255,0.4);
+    color: var(--border);
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    border: 3px black double;
+    border: 3px var(--border) double;
     font-size: 24px;
     padding-top: 7px;
     padding-left: 3px;
@@ -98,14 +106,14 @@ nav#main .menuitems ul li {
 }
 
 p a, p a::visited, nav#main ul li a,  nav#main ul li a::visited {
-	color: white;
+	color: var(--text);
 	border-radius: 5%;
 }
 
 a:hover, a.active {
-    color: #63cdff;
- /*   box-shadow: 0 0 15px #63cdff;  */
-    text-shadow: 0 0 2px #63cdff;
+    color: var(--accent);
+ /*   box-shadow: 0 0 15px var(--accent);  */
+    text-shadow: 0 0 2px var(--accent);
 }
 
 nav#main .menuitems ul li a i {
@@ -121,7 +129,7 @@ nav#main .menuitems ul li a i {
     z-index: 1;
 	margin-bottom: 15px;
 }
-i.fa, nav#main .menuitems ul li a i.fab{
+i.fa, nav#main .menuitems ul li a i.fab, i.fas {
     line-height: 40px !important;
     color: rgba(255,255,255,0.3);
 	-moz-osx-font-smoothing: grayscale;
@@ -161,7 +169,7 @@ ul.droptions {
 nav ul:hover li.dropdown:hover .droptions{
 	visibility:visible;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-	background: #151d3c;
+	background: var(--background);
 }
 nav#main li.dropdown ul.droptions li a {
     width: 80px;
@@ -180,7 +188,7 @@ article {
 	width: 100vw;
     scroll-snap-type: y proximity;
     overflow-y: scroll;
-		background: repeating-linear-gradient(153deg,  #151d3c,  transparent 10px,  rgba(255,255,255,0.01) -47px,  rgba(255,255,255,0.41) 187px);
+		background: repeating-linear-gradient(153deg,  var(--background),  transparent 10px,  rgba(255,255,255,0.01) -47px,  rgba(255,255,255,0.41) 187px);
 	}
 section {
 	margin: 5vh 0 15vh 0px;
@@ -195,11 +203,11 @@ section {
 #home .container .card, #contact .container .callout {
     position: relative;
     padding: 100px 20px;
-    border: 1px black solid;
+    border: 1px var(--border) solid;
     width: 100%;
     max-width: 800px;
     min-height: 220px;
-    background: #151d3c;
+    background: var(--background);
 	margin: 0 auto;
 	box-sizing: border-box;
 }
@@ -227,7 +235,7 @@ h1, #home h1 {
     font-weight: 600;
     color: rgba(255,255,255,1);
 	text-align: center;
-	text-shadow: 2px 3px #63cdff;
+	text-shadow: 2px 3px var(--accent);
 }
 #home h2  {
     position: relative;
@@ -254,14 +262,14 @@ nav.icon-bar .icons  {
 	position: fixed;
 	bottom: 0px;
 	width: 97vw;
-	border-top: 1px black solid;
+	border-top: 1px var(--border) solid;
 	padding: 10px 0 10px 0;
 } 
 .icons {
 	display: flex;
 	align-items: center;
   	justify-content: center;
-	background: #151d3c;
+	background: var(--background);
 	
 }
 nav.icon-bar .icons p, .icons p {
@@ -281,19 +289,19 @@ nav.icon-bar .icons p a, .icons p a {
 	font-size: 20px;
 	z-index: 1;
 }
-nav.icon-bar .icons p a i.fa, .icons p a i.fab, .icons p a i.fa {
+nav.icon-bar .icons p a i.fa, .icons p a i.fab, .icons p a i.fa, i.fas{
 	line-height: 40px !important;
 	color: rgba(255,255,255,0.3);
 }
 nav.icon-bar .icons p a:hover, .icons p a:hover {
-	color: #63cdff;;
-	box-shadow: 0 0 15px #63cdff;;
-	text-shadow: 0 0 2px #63cdff;;
+	color: var(--accent);;
+	box-shadow: 0 0 15px var(--accent);;
+	text-shadow: 0 0 2px var(--accent);;
 }
 nav.icon-bar .icons p a.active, .icons p a.active {
-	color: #63cdff;;
-	box-shadow: 0 0 6px #63cdff;;
-	text-shadow: 0 0 2px #63cdff;;
+	color: var(--accent);;
+	box-shadow: 0 0 6px var(--accent);;
+	text-shadow: 0 0 2px var(--accent);;
 }
 .icons p span {
 	color: transparent;
@@ -307,10 +315,31 @@ nav.icon-bar .icons p a.active, .icons p a.active {
 	line-height: 30px;
 	width: 100%;
 	opacity: 1;
-	color: #63cdff;
-	text-shadow: 0 0 2px #63cdff;;
+	color: var(--accent);
+	text-shadow: 0 0 2px var(--accent);;
 }
-
+#palette {
+   width: 60px;
+   height: 60px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   position: fixed;
+   top: 5px;
+   right: 5px;
+   background: var(--background);
+   border-radius: 50%;
+}
+#palette #c.hidden {
+  position: absolute;
+  top: auto;
+  width: 0px;
+  height: 0px;
+  overflow: hidden;
+  background: transparent;
+  color: transparent;
+  border: none;
+}
 /* PROCESS */
 #process {
 	min-height: auto;
@@ -341,13 +370,13 @@ nav.icon-bar .icons p a.active, .icons p a.active {
 }
 #process #chevron ol li:after {
     content: '»';
-    color: white;
+    color: var(--text);
     padding: -2px;
     font-size: 17px;
     width: 0;
     height: 0;
     border-top: 10px solid transparent;
-    border-left: 24px solid white;
+    border-left: 24px solid var(--text);
     border-bottom: 11px solid transparent;
     z-index: 2;
 }
@@ -385,11 +414,11 @@ nav.icon-bar .icons p a.active, .icons p a.active {
     align-items: center;
 	    position: relative;
     padding: 100px 20px;
-    border: 1px black solid;
+    border: 1px var(--border) solid;
     width: 100%;
     max-width: 800px;
     min-height: 220px;
-    background: #151d3c;
+    background: var(--background);
 	margin-top: 30px;
 }
 #process .container .carousel-inner  .item:before {
@@ -416,7 +445,7 @@ nav.icon-bar .icons p a.active, .icons p a.active {
 #process .container .carousel-inner .item:hover h2, .modal .modal-content h4, .modal .modal-content h6 {
     top: 30px;
     color: rgba(255,255,255, 0.8);
-	text-shadow: 2px 3px #63cdff;
+	text-shadow: 2px 3px var(--accent);
 	transition: top 1s, color 1s, text-shadow 1s;
 }
 #process .container .carousel-inner .item .card {
@@ -431,28 +460,28 @@ nav.icon-bar .icons p a.active, .icons p a.active {
 #process .container .carousel-inner .item .card-body a, #process .container .carousel-inner .item .card-body a:visited {
     position: absolute;
     bottom: 70px;
-	background: #060c21;
+	background: var(--primary);
     text-align: center;
-    color: white;
+    color: var(--text);
 	border: 1px rgba(255,255,255,0.5) solid;
     padding: 11px;
     border-radius: 6px;
 	text-decoration: none;
 }
 .btn {
-    background: #151d3c;
+    background: var(--background);
     text-align: center;
-    color: white;
+    color: var(--text);
 	border: 1px rgba(255,255,255,0.5) solid;
     padding: 11px;
     border-radius: 6px;
 	text-decoration: none;
 }
 #process .container .carousel-inner .item .card-body a:hover, .btn:hover {
-    color: #060c21;
-    /* box-shadow: 0 0 15px #63cdff; */
-    text-shadow: 0 0 2px #63cdff;
-	background: white;
+    color: var(--primary);
+    /* box-shadow: 0 0 15px var(--accent); */
+    text-shadow: 0 0 2px var(--accent);
+	background: var(--text);
 	transition: .5s color ease-in, .5s background ease-in;
 	}
 #process h3 {
@@ -488,9 +517,9 @@ nav.icon-bar .icons p a.active, .icons p a.active {
    margin: 0px 1vw;
    padding: 2vw;
    position: relative;
-   border: 1px black solid;
+   border: 1px var(--border) solid;
    width: 100%;
-   background: #151d3c;
+   background: var(--background);
    justify-content: top;
    align-items: top;
    margin-top: 40px;
@@ -515,24 +544,24 @@ nav.icon-bar .icons p a.active, .icons p a.active {
 #skills-sub-types > h4, #experience p, #education .content h4, #hobbies > div > div > div,  #process #chevron ol li a {
 	box-sizing: border-box;
 	text-align: center;
-    color: white;
-    background-color: #060c21;
+    color: var(--text);
+    background-color: var(--primary);
     border-color: #ddd;
 	min-width: 100%;
-	border: 1px solid white;
+	border: 1px solid var(--text);
 	padding: 10px;
 }
 #skills-sub-types > h4:hover,   #experience p:hover, #education .content h4:hover, #hobbies > div > div > div.box:hover, #process #chevron ol li a:hover, #process #chevron ol li a.active {
     font-weight: 900;
-    color: #060c21;
-	background: #63cdff;
+    color: var(--primary);
+	background: var(--accent);
 	transition: background .5s, color .5s;
 	text-decoration: none;
-	text-shadow: 0 0 2px #63cdff;
+	text-shadow: 0 0 2px var(--accent);
 }
 #process #chevron ol li a:hover, #process #chevron ol li a.active {
    border-radius: 0px;
-   border-right: 1px black solid;
+   border-right: 1px var(--border) solid;
 }
 #experience ul {
 	padding: 0px;
@@ -542,8 +571,8 @@ nav.icon-bar .icons p a.active, .icons p a.active {
 
 #skills-sub-types > div.boxes,  #experience ul li, #education .content p, #hobbies > div > div > div.unbox  {
 	display: none;
-	background: white;
-	color: #060c21;
+	background: var(--text);
+	color: var(--primary);
 	border-top: 1px #ccc solid;
 	padding: 20px;
 	margin: 0px;
@@ -573,7 +602,7 @@ nav.icon-bar .icons p a.active, .icons p a.active {
 }
 #skills-sub-types div.boxes.expand .box svg text {
 	transition: stroke 20s linear forwards;
-	stroke: #151d3c;
+	stroke: var(--background);
 }
 .progressbar__circle {
 	  stroke-dasharray: 10 17;
@@ -598,8 +627,8 @@ nav.icon-bar .icons p a.active, .icons p a.active {
     width: 700px;
     margin: 2vh  auto;
 	padding: 5vh;
-	background: #151d3c;
-	border: 1px black solid;
+	background: var(--background);
+	border: 1px var(--border) solid;
 	min-height: 64vh;
 }
 .clear:after {
@@ -703,7 +732,7 @@ nav.icon-bar .icons p a.active, .icons p a.active {
 	color: #FC3
 	}
 a, a::visited {
-	color: white;
+	color: var(--text);
 	}
 #portfolios > div > div.projects-container > div > div:nth-child(4) {
 	 margin-left: 16%;
@@ -729,7 +758,7 @@ a, a::visited {
   background-color: rgba(0,0,0,0.4); 
  }
  .modal .modal-content {
-  background: white;
+  background: var(--text);
   margin: 15% auto;
   border: 1px solid #888;
   width: 80%; 
@@ -738,7 +767,7 @@ a, a::visited {
   padding-right: 20px;
  }
 .modal .modal-content h4, .modal .modal-content h6, .modal .modal-content p,  .modal .modal-content ul li {
-	color: #151d3c;
+	color: var(--background);
 }
 .modal .modal-content h4 {
 	font-size: 3em;
@@ -803,7 +832,7 @@ a, a::visited {
 
 .close:hover,
 .close:focus {
-  color: black;
+  color: var(--border);
   text-decoration: none;
   cursor: pointer;
 }
@@ -969,7 +998,7 @@ section .container, #home .container {
    }
    to {
 	  stroke-dasharray: 125 125;
-	  stroke: #151d3c;
+	  stroke: var(--background);
   }
 }
 @keyframes dash2 {
@@ -979,7 +1008,7 @@ section .container, #home .container {
    }
    to {
 	  stroke-dasharray: 134 143;
-	  stroke: #151d3c;
+	  stroke: var(--background);
   }
 }
 @keyframes dash3 {
@@ -989,7 +1018,7 @@ section .container, #home .container {
    }
    to {
 	  stroke-dasharray: 141 141;
-	  stroke: #151d3c;
+	  stroke: var(--background);
   }
 }
 @keyframes dash4 {
@@ -999,6 +1028,6 @@ section .container, #home .container {
    }
    to {
 	  stroke-dasharray: 149 149;
-	  stroke: #151d3c;
+	  stroke: var(--background);
   }
 }
