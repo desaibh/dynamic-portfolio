@@ -179,7 +179,6 @@ nav#main li.dropdown ul.droptions li:hover, nav#main li:hover, #portfolios .cont
 	border-radius: 5%;
 }
 
-
 h1 {
 	text-align: center;
 }
@@ -340,6 +339,8 @@ nav.icon-bar .icons p a.active, .icons p a.active {
   color: transparent;
   border: none;
 }
+
+
 /* PROCESS */
 #process {
 	min-height: auto;

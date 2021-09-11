@@ -4,6 +4,7 @@
 	--seafoam: #19feed;
 	--yellow: #ffee0e;
 	--slate: #212022;
+	--grey: #beb9c3;
 }
 
 * {
@@ -11,6 +12,7 @@
 	padding: 0px;
 	margin: 0px;
 	box-sizing: border-box;
+	position: relative;
 }
 h1 {
     text-align: center;
@@ -27,7 +29,7 @@ h3 {
     font-size: 24px;
     text-transform: uppercase;
     text-align: center;
-    color: #5f8e6c;
+    color: var(--slate);
 	font-weight:normal;
 }
 h4 {
@@ -44,7 +46,7 @@ ul, ol {
 	margin: 0px;
 }
 
-section:before, article:before {
+section:after, article:before {
   content: '';
   width: 100vw;
   height: 10px;
@@ -58,16 +60,16 @@ section:before, article:before {
   linear-gradient(135deg, transparent 0, transparent 47.5%, var(--magenta) 47.5%, var(--magenta) 52.5%, transparent 52.5%, transparent 100%);
   background-size: 10px 10px, 10px 10px, 10px 10px, 10px 10px, 10px 10px ;
   opacity: .5;
-	}
+  z-index: 9;
+}
 section .container {
-	padding: 80px;
 	z-index: 10;
+	padding: 40px;
 }
 
 .sr-only {
 	display: none;
 }
-
 .btn, figcaption p a {
     display: inline-block;
     padding: 6px 12px;
@@ -83,11 +85,12 @@ section .container {
     border-radius: 4px;
 }
 .btn-primary, figcaption p a {
-    color: #fff;
-    background-color: #337ab7;
-    border-color: #2e6da4;
+    color: white;
+    background-color: var(--magenta);
+    border-color: var(--magenta);
 	text-decoration: none;
 	margin-top: 10px;
+	font-weight: 999;
 }
 
 /*HEADER ROW*/
@@ -124,10 +127,10 @@ header::after {
   position: absolute;
   background-repeat: repeat;
 background: 
-linear-gradient(135deg, white 6%, white 9%, var(--seafoam) 9%, var(--seafoam) 12%, white 12%, white 15%, var(--magenta) 15%, var(--magenta) 18%, white 18%, white 25%, transparent 25%),
-linear-gradient(225deg, white 6%, white 9%, var(--magenta) 9%, var(--magenta) 12%, white 12%, white 15%, var(--seafoam) 15%, var(--seafoam) 18%, white 18%, white 25%, transparent 25%),
-linear-gradient(315deg, white 6%, white 9%, var(--seafoam) 9%, var(--seafoam) 12%, white 12%, white 15%, var(--magenta) 15%, var(--magenta) 18%, white 18%, white 25%, transparent 25%),
-linear-gradient(45deg, white 6%, white 9%, var(--magenta) 9%, var(--magenta) 12%, white 12%, white 15%, var(--seafoam) 15%, var(--seafoam) 18%, white 18%, white 25%, transparent 25%);
+linear-gradient(135deg, white 6% 9%, var(--seafoam) 9% 12%, white 12% 15%, var(--magenta) 15% 18%, white 18% 25%, transparent 25%),
+linear-gradient(225deg, white 6% 9%, var(--magenta) 9% 12%, white 12% 15%, var(--seafoam) 15% 18%, white 18% 25%, transparent 25%),
+linear-gradient(315deg, white 6% 9%, var(--seafoam) 9% 12%, white 12% 15%, var(--magenta) 15% 18%, white 18% 25%, transparent 25%),
+linear-gradient(45deg, white 6% 9%, var(--magenta) 9% 12%, white 12% 15%, var(--seafoam) 15% 18%, white 18% 25%, transparent 25%);
 background-size: 6vh 6vh;
 opacity: .5;
 z-index: -1;
@@ -219,17 +222,20 @@ nav#main li.dropdown ul.droptions li:hover, nav#main li:hover, #portfolios .cont
   height: 100%;
   position: absolute;
   background-image: 
-  linear-gradient(to right, transparent 0%, transparent 15%, var(--yellow) 15%, var(--yellow) 20%, transparent 20%, transparent 25%, var(--yellow) 25%, var(--yellow) 30%, transparent 30%, transparent 35%, var(--yellow) 35%, var(--yellow) 40%, transparent 40%, transparent 60%, var(--yellow) 60%, var(--yellow) 65%, transparent 65%, transparent 70%, var(--yellow) 70%, var(--yellow) 75%, transparent 75%, transparent 80%, var(--yellow) 80%, var(--yellow) 85%, transparent 85%, transparent 100%),
-  linear-gradient(to right, transparent 0%, transparent 40%, var(--magenta) 40%, var(--magenta) 45%, var(--seafoam), 45%, var(--seafoam) 55%, var(--magenta) 55%, var(--magenta) 60%, transparent 60%, transparent 100%), 
-  linear-gradient(to right, var(--seafoam), 0%, var(--seafoam) 5%, transparent 5%, transparent 40%, transparent 40%, var(--magenta) 40%, var(--magenta) 45%, transparent 45%, transparent 55%, var(--magenta) 55%, var(--magenta) 60%, transparent 60%, transparent 95%, var(--seafoam) 95%, var(--seafoam) 100%), 
-    linear-gradient(to right, transparent 0%, transparent 40%, var(--magenta) 40%, var(--magenta) 45%, var(--seafoam), 45%, var(--seafoam) 55%, var(--magenta) 55%, var(--magenta) 60%, transparent 60%, transparent 100%), 
-  linear-gradient(to right, transparent 0%, transparent 15%, var(--yellow) 15%, var(--yellow) 20%, transparent 20%, transparent 25%, var(--yellow) 25%, var(--yellow) 30%, transparent 30%, transparent 35%, var(--yellow) 35%, var(--yellow) 40%, transparent 40%, transparent 60%, var(--yellow) 60%, var(--yellow) 65%, transparent 65%, transparent 70%, var(--yellow) 70%, var(--yellow) 75%, transparent 75%, transparent 80%, var(--yellow) 80%, var(--yellow) 85%, transparent 85%, transparent 100%), 
-  linear-gradient(to right, transparent 0%, transparent 40%, var(--magenta) 40%, var(--magenta) 45%, var(--seafoam), 45%, var(--seafoam) 55%, var(--magenta) 55%, var(--magenta) 60%, transparent 60%, transparent 100%), 
-  linear-gradient(to right, var(--seafoam), 0%, var(--seafoam) 5%, transparent 5%, transparent 40%, transparent 40%, var(--magenta) 40%, var(--magenta) 45%, transparent 45%, transparent 55%, var(--magenta) 55%, var(--magenta) 60%, transparent 60%, transparent 95%, var(--seafoam) 95%, var(--seafoam) 100%),
-    linear-gradient(to right, transparent 0%, transparent 40%, var(--magenta) 40%, var(--magenta) 45%, var(--seafoam) 45%, var(--seafoam) 55%, var(--magenta) 55%, var(--magenta) 60%, transparent 60%, transparent 100%), 
-  linear-gradient(to right, transparent 0%, transparent 15%, var(--yellow) 15%, var(--yellow) 20%, transparent 20%, transparent 25%, var(--yellow) 25%, var(--yellow) 30%, transparent 30%, transparent 35%, var(--yellow) 35%, var(--yellow) 40%, transparent 40%, transparent 60%, var(--yellow) 60%, var(--yellow) 65%, transparent 65%, transparent 70%, var(--yellow) 70%, var(--yellow) 75%, transparent 75%, transparent 80%, var(--yellow) 80%, var(--yellow) 85%, transparent 85%, transparent 100%),
-  linear-gradient(to right,transparent 0%, transparent 40%, var(--magenta) 40%, var(--magenta) 45%, var(--seafoam) 45%, var(--seafoam) 55%, var(--magenta) 55%, var(--magenta) 60%, transparent 60%, transparent 100%), 
-  linear-gradient(to right,blue 0%, var(--seafoam) 5%, transparent 5%, transparent 40%, transparent 40%, var(--magenta) 40%, var(--magenta) 45%, transparent 45%, transparent 55%, var(--magenta) 55%, var(--magenta) 60%, transparent 60%, transparent 95%, var(--seafoam) 95%, var(--seafoam) 100%);
+  linear-gradient(to right, transparent 0%  15%, var(--yellow) 15% 20%, transparent 20% 25%, var(--yellow) 25% 30%, transparent 30% 35%, var(--yellow) 35% 40%, transparent 40%  60%, var(--yellow) 60% 65%, transparent 65%  70%, var(--yellow) 70% 75%, transparent 75% 80%, var(--yellow) 80% 85%, transparent 85% 100%),
+  linear-gradient(to right, transparent 0%  40%, var(--magenta) 40% 45%, var(--seafoam) 45%  55%, var(--magenta) 55%  60%, transparent 60% 100%), 
+  linear-gradient(to right, var(--seafoam) 0% 5%, transparent 5% 40%, var(--magenta) 40% 45%, transparent 45% 55%, var(--magenta) 55% 60%, transparent 60% 95%, var(--seafoam) 95% 100%), 
+  linear-gradient(to right, transparent 0%  40%, var(--magenta) 40% 45%, var(--seafoam) 45%  55%, var(--magenta) 55%  60%, transparent 60% 100%), 
+  
+  linear-gradient(to right, transparent 0%  15%, var(--yellow) 15% 20%, transparent 20% 25%, var(--yellow) 25% 30%, transparent 30% 35%, var(--yellow) 35% 40%, transparent 40%  60%, var(--yellow) 60% 65%, transparent 65%  70%, var(--yellow) 70% 75%, transparent 75% 80%, var(--yellow) 80% 85%, transparent 85% 100%),
+  linear-gradient(to right, transparent 0%  40%, var(--magenta) 40% 45%, var(--seafoam) 45%  55%, var(--magenta) 55%  60%, transparent 60% 100%), 
+  linear-gradient(to right, var(--seafoam) 0% 5%, transparent 5% 40%, var(--magenta) 40% 45%, transparent 45% 55%, var(--magenta) 55% 60%, transparent 60% 95%, var(--seafoam) 95% 100%), 
+  linear-gradient(to right, transparent 0%  40%, var(--magenta) 40% 45%, var(--seafoam) 45%  55%, var(--magenta) 55%  60%, transparent 60% 100%), 
+
+  linear-gradient(to right, transparent 0%  15%, var(--yellow) 15% 20%, transparent 20% 25%, var(--yellow) 25% 30%, transparent 30% 35%, var(--yellow) 35% 40%, transparent 40%  60%, var(--yellow) 60% 65%, transparent 65%  70%, var(--yellow) 70% 75%, transparent 75% 80%, var(--yellow) 80% 85%, transparent 85% 100%),
+  linear-gradient(to right, transparent 0%  40%, var(--magenta) 40% 45%, var(--seafoam) 45%  55%, var(--magenta) 55%  60%, transparent 60% 100%), 
+  linear-gradient(to right, var(--seafoam) 0% 5%, transparent 5% 40%, var(--magenta) 40% 45%, transparent 45% 55%, var(--magenta) 55% 60%, transparent 60% 95%, var(--seafoam) 95% 100%);
+
   background-size: 150px 70px;
   background-position: 0 0, 0 70px, 0 140px, 0 210px, 0 280px, 0 350px, 0 420px, 0 490px, 0 560px, 0 630px, 0 700px;
   background-repeat: repeat-x;
@@ -247,39 +253,113 @@ nav#main li.dropdown ul.droptions li:hover, nav#main li:hover, #portfolios .cont
 }
 
 /*PORTFOLIO*/
+
+
 #portfolios {
-    background: #d8e3f3;
+	width: 100vw;
     min-height: 200px;
+	background: white;
+	z-index: 8;
+}
+#portfolios:before {
+	content: '';
+	width: 100%;
+	height: 100%;
+	margin-top: 10px;
+	position: absolute;
+	background: 	linear-gradient(to right, var(--seafoam) 0% 100% ),
+						linear-gradient(to right, transparent 0% 16.6%, var(--grey) 16.6% 33%, transparent 33% 50%, transparent 50% 66.6%, var(--grey) 66.6% 83%, transparent 83% 100% ),
+						linear-gradient(to right, transparent 0% 16.6%, var(--seafoam) 16.6% 33%, transparent 33% 66.6%, var(--seafoam) 66.6% 83%, transparent 83% 100% ),
+						linear-gradient(to right, transparent 0% 25%,  var(--seafoam) 25% 41.6%, transparent 41.6% 58.3%,  var(--seafoam) 58.3% 74.9%, transparent 74.9% 100% ),
+						linear-gradient(to right, transparent 0% 33%, var(--seafoam) 33% 66.6%, transparent 66.6% 100% ),
+						linear-gradient(to right, transparent 0% 25%,  var(--seafoam) 25% 41.6%, transparent 41.6% 58.3%,  var(--seafoam) 58.3% 74.9%, transparent 74.9% 100% ),
+						linear-gradient(to right, transparent 0% 16.6%, var(--seafoam) 16.6% 33%, transparent 33% 66.6%, var(--seafoam) 66.6% 83%, transparent 83% 100% ),
+						linear-gradient(to right, transparent 0% 16.6%, var(--grey) 16.6% 33%, transparent 33% 50%, transparent 50% 66.6%, var(--grey) 66.6% 83%, transparent 83% 100% ),
+						linear-gradient(to right, var(--seafoam) 0% 100% ),
+			linear-gradient(to right, var(--yellow) 0% 16.6%, transparent 16.6% 33%, var(--yellow) 33% 50%, var(--magenta) 50% 66.6%, transparent 66.6% 83%, var(--magenta) 83% 100% ),
+			linear-gradient(to right, transparent 0% 16.6%, var(--yellow) 16.6% 33%, transparent 33% 50%, transparent 50% 66.6%, var(--magenta) 66.6% 83%, transparent 83% 100% ),
+			linear-gradient(to right, var(--yellow) 0% 16.6%, transparent 16.6% 33%, var(--yellow) 33% 50%, var(--magenta) 50% 66.6%, transparent 66.6% 83%, var(--magenta) 83% 100% ),
+						linear-gradient(to right, var(--seafoam) 0% 100% ),
+						linear-gradient(to right, transparent 0% 16.6%, var(--grey) 16.6% 33%, transparent 33% 50%, transparent 50% 66.6%, var(--grey) 66.6% 83%, transparent 83% 100% ),
+						linear-gradient(to right, transparent 0% 16.6%, var(--seafoam) 16.6% 33%, transparent 33% 66.6%, var(--seafoam) 66.6% 83%, transparent 83% 100% ),
+						linear-gradient(to right, transparent 0% 25%,  var(--seafoam) 25% 41.6%, transparent 41.6% 58.3%,  var(--seafoam) 58.3% 74.9%, transparent 74.9% 100% ),
+						linear-gradient(to right, transparent 0% 33%, var(--seafoam) 33% 66.6%, transparent 66.6% 100% ),
+						linear-gradient(to right, transparent 0% 25%,  var(--seafoam) 25% 41.6%, transparent 41.6% 58.3%,  var(--seafoam) 58.3% 74.9%, transparent 74.9% 100% ),
+						linear-gradient(to right, transparent 0% 16.6%, var(--seafoam) 16.6% 33%, transparent 33% 66.6%, var(--seafoam) 66.6% 83%, transparent 83% 100% ),
+						linear-gradient(to right, transparent 0% 16.6%, var(--grey) 16.6% 33%, transparent 33% 50%, transparent 50% 66.6%, var(--grey) 66.6% 83%, transparent 83% 100% ),
+						linear-gradient(to right, var(--seafoam) 0% 100% ),
+			linear-gradient(to right, var(--yellow) 0% 16.6%, transparent 16.6% 33%, var(--yellow) 33% 50%, var(--magenta) 50% 66.6%, transparent 66.6% 83%, var(--magenta) 83% 100% ),
+			linear-gradient(to right, transparent 0% 16.6%, var(--yellow) 16.6% 33%, transparent 33% 50%, transparent 50% 66.6%, var(--magenta) 66.6% 83%, transparent 83% 100% ),
+			linear-gradient(to right, var(--yellow) 0% 16.6%, transparent 16.6% 33%, var(--yellow) 33% 50%, var(--magenta) 50% 66.6%, transparent 66.6% 83%, var(--magenta) 83% 100% ),
+						linear-gradient(to right, var(--seafoam) 0% 100% ),
+						linear-gradient(to right, transparent 0% 16.6%, var(--grey) 16.6% 33%, transparent 33% 50%, transparent 50% 66.6%, var(--grey) 66.6% 83%, transparent 83% 100% ),
+						linear-gradient(to right, transparent 0% 16.6%, var(--seafoam) 16.6% 33%, transparent 33% 66.6%, var(--seafoam) 66.6% 83%, transparent 83% 100% ),
+						linear-gradient(to right, transparent 0% 25%,  var(--seafoam) 25% 41.6%, transparent 41.6% 58.3%,  var(--seafoam) 58.3% 74.9%, transparent 74.9% 100% ),
+						linear-gradient(to right, transparent 0% 33%, var(--seafoam) 33% 66.6%, transparent 66.6% 100% ),
+						linear-gradient(to right, transparent 0% 25%,  var(--seafoam) 25% 41.6%, transparent 41.6% 58.3%,  var(--seafoam) 58.3% 74.9%, transparent 74.9% 100% ),
+						linear-gradient(to right, transparent 0% 16.6%, var(--seafoam) 16.6% 33%, transparent 33% 66.6%, var(--seafoam) 66.6% 83%, transparent 83% 100% ),
+						linear-gradient(to right, transparent 0% 16.6%, var(--grey) 16.6% 33%, transparent 33% 50%, transparent 50% 66.6%, var(--grey) 66.6% 83%, transparent 83% 100% ),
+						linear-gradient(to right, var(--seafoam) 0% 100% ),
+			linear-gradient(to right, var(--yellow) 0% 16.6%, transparent 16.6% 33%, var(--yellow) 33% 50%, var(--magenta) 50% 66.6%, transparent 66.6% 83%, var(--magenta) 83% 100% ),
+			linear-gradient(to right, transparent 0% 16.6%, var(--yellow) 16.6% 33%, transparent 33% 50%, transparent 50% 66.6%, var(--magenta) 66.6% 83%, transparent 83% 100% ),
+			linear-gradient(to right, var(--yellow) 0% 16.6%, transparent 16.6% 33%, var(--yellow) 33% 50%, var(--magenta) 50% 66.6%, transparent 66.6% 83%, var(--magenta) 83% 100% ),
+					   linear-gradient(to right, var(--seafoam) 0% 100% ),
+						linear-gradient(to right, transparent 0% 16.6%, var(--grey) 16.6% 33%, transparent 33% 50%, transparent 50% 66.6%, var(--grey) 66.6% 83%, transparent 83% 100% ),
+						linear-gradient(to right, transparent 0% 16.6%, var(--seafoam) 16.6% 33%, transparent 33% 66.6%, var(--seafoam) 66.6% 83%, transparent 83% 100% ),
+						linear-gradient(to right, transparent 0% 25%,  var(--seafoam) 25% 41.6%, transparent 41.6% 58.3%,  var(--seafoam) 58.3% 74.9%, transparent 74.9% 100% ),
+						linear-gradient(to right, transparent 0% 33%, var(--seafoam) 33% 66.6%, transparent 66.6% 100% ),
+						linear-gradient(to right, transparent 0% 25%,  var(--seafoam) 25% 41.6%, transparent 41.6% 58.3%,  var(--seafoam) 58.3% 74.9%, transparent 74.9% 100% ),
+						linear-gradient(to right, transparent 0% 16.6%, var(--seafoam) 16.6% 33%, transparent 33% 66.6%, var(--seafoam) 66.6% 83%, transparent 83% 100% ),
+						linear-gradient(to right, transparent 0% 16.6%, var(--grey) 16.6% 33%, transparent 33% 50%, transparent 50% 66.6%, var(--grey) 66.6% 83%, transparent 83% 100% ),
+						linear-gradient(to right, var(--seafoam) 0% 100% ),
+			linear-gradient(to right, var(--yellow) 0% 16.6%, transparent 16.6% 33%, var(--yellow) 33% 50%, var(--magenta) 50% 66.6%, transparent 66.6% 83%, var(--magenta) 83% 100% ),
+			linear-gradient(to right, transparent 0% 16.6%, var(--yellow) 16.6% 33%, transparent 33% 50%, transparent 50% 66.6%, var(--magenta) 66.6% 83%, transparent 83% 100% ),
+			linear-gradient(to right, var(--yellow) 0% 16.6%, transparent 16.6% 33%, var(--yellow) 33% 50%, var(--magenta) 50% 66.6%, transparent 66.6% 83%, var(--magenta) 83% 100% );
+  background-size:  180px 30px;
+  background-position: 0 0, 0 30px, 0 60px, 0 90px, 0 120px, 0 150px, 0 180px, 0 210px, 0 240px, 0 270px, 0 300px, 0 330px, 
+  								 0 360px, 0 390px, 0 420px, 0 450px, 0 480px, 0 510px, 0 540px, 0 570px, 0 600px, 0 630px,  0 660px, 0 690px, 
+								 0 720px, 0 750px, 0 780px, 0 810px, 0 840px, 0 870px, 0 900px, 0 930px, 0 960px, 0 990px, 0 1020px, 0 1050px, 
+								 0 1080px, 0 1110px, 0 1140px, 0 1170px, 0 1200px, 0 1230px,  0 1260px, 0 1290px, 0 1320px, 0 1350px, 0 1380px, 0 1410px;
+  background-repeat: repeat-x;
+  z-index: 9;
+  opacity: .5
+}
+#portfolios .container * {
+	z-index: 11;
 }
 #portfolios .controls {
-    width: 100%;
-    margin-top: 35px;
-	bottom: 40px;
-}
-#portfolios .controls ul {
-   flex-wrap: wrap;	
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-#portfolios .controls ul  li {
-	flex: 1;
-	padding: 12px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
+    display: none;
 }
 #portfolios .container .projects-container .projects {
 	display: flex;
 	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
 	margin: 0 auto;
 	text-align: center;
-	max-width: 1080px;
+	max-width: 700px;
 	gap: 25px;
+	max-width: 1080ps;
+}
+#portfolios .container .projects-container .projects .project:nth-child(odd)  {
+	transform: rotate(45deg);
+}
+#portfolios .container .projects-container .projects .project:nth-child(even)  {
+	transform: rotate(135deg) scale(1,-1);
+}
+#portfolios .container .projects-container .projects .project:nth-child(even)  p {
+	transform: scale(-1, 1);
+}
+#portfolios .container .projects-container .projects .project:nth-child(even) figure figcaption {
+	flex-direction: row-reverse;
 }
 #portfolios .container .projects-container .projects .project figure  {
 	flex: 1;
+}
+#portfolios .container .projects-container .projects .project figure  img {
+}
+#portfolios .container .projects-container .projects .project figure  img:hover {
+    clip-path: unset;
 }
 #portfolios .container .projects-container .projects .project figure figcaption {
 	display: flex;
@@ -298,9 +378,27 @@ nav#main li.dropdown ul.droptions li:hover, nav#main li:hover, #portfolios .cont
 }
 
 
+
 /*PROCESS*/
+section#process:before {
+  content: '';
+  width: 100vw;
+  height: 100%;
+  position: absolute;
+  background-image: linear-gradient(135deg, var(--grey) 0% 7%, var(--magenta) 7% 11%, transparent 10% 15%, var(--seafoam) 15% 22.5%, transparent 22.5% 25%, var(--seafoam) 25% 29%, transparent 29% 31.5%, var(--seafoam) 31.5% 39%, transparent 39% 100%), 
+    linear-gradient(45deg, transparent 0 60%, var(--seafoam) 60% 67.5%, transparent 67.5% 70%, var(--seafoam) 70% 74%, transparent 74%  76.5%, var(--seafoam) 76.5% 84%, transparent 84% 89%, var(--magenta) 89% 93%, var(--grey) 93% 100%),
+    linear-gradient(135deg, white 0 30%, var(--magenta) 30% 36.5%, transparent 36.5% 100%), 
+    linear-gradient(45deg, transparent 0 6%, var(--grey) 6% 62%, var(--magenta) 62% 67.5%, transparent 67.5% 100%);
+  background-size: 100vw 100%;
+  background-position: 0 0, 0 0, 0 10vh, 0 10vh;
+  background-repeat: no-repeat;
+  opacity: .5;
+  z-index: 10;
+}
 #process {
-		background: #eff0f1;
+	background: white;
+	z-index: 11;
+	margin-top: 10px;
 }
 #designCarousel {
 	overflow: hidden;
@@ -310,13 +408,14 @@ nav#main li.dropdown ul.droptions li:hover, nav#main li:hover, #portfolios .cont
     width: 100vw;
 	display: flex;
 	transition: 2s transform;
-	padding-top: 40px
+	padding-top: 40px;
+	padding-left: 1.5vw;
 }
 #designCarousel  div.carousel-inner  .item {
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
-	align-items: baseline;
+	align-items: stretch;
 	justify-content: center;
 	gap: 22px;
 }
@@ -324,6 +423,7 @@ nav#main li.dropdown ul.droptions li:hover, nav#main li:hover, #portfolios .cont
 	width: 90vw;
 }
 #designCarousel  div.carousel-inner  .item .card {
+	display: flex;
 	flex: 1;
 	max-width: 25vw;
 }
@@ -331,10 +431,15 @@ nav#main li.dropdown ul.droptions li:hover, nav#main li:hover, #portfolios .cont
 	display: flex;
 	flex-direction: column;
 	align-items: stretch;
+    background: var(--seafoam);
+    padding: 60px 20px 100px 20px;
+    border-radius: 25%;
 }
 #designCarousel  div.carousel-inner  .item .card .card-body a{
 	align-self: center;
 	justify-self: flex-end;  
+	position: absolute;
+	bottom: 0px;
 }
 .carousel-inner>.item.active, .carousel-inner>.item.next.left, .carousel-inner>.item.prev.right {
     left: 0;
@@ -354,6 +459,7 @@ nav#main li.dropdown ul.droptions li:hover, nav#main li:hover, #portfolios .cont
   overflow-y: scroll; 
   scrollbar-gutter: auto;
   background-color: rgba(0,0,0,0.4); 
+  z-index: 40;
  }
 
  .modal .modal-content {
@@ -482,46 +588,16 @@ nav#main li.dropdown ul.droptions li:hover, nav#main li:hover, #portfolios .cont
 	font-size: 20px;	
 	font-weight: 800;
 }
-.quote {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	justify-content: center;
-	height: 500px;
-	text-align: center;
-}
+
 .callout {
 	background-color: rgba(255,255,255,.5); padding: 20px;
 }
-.quote #blockquote {
-	font-size: 44px;
-	color: #444;
-	background-color: rgba(255,255,255,.5);
-	padding: 20px;
-	max-width: 1000px;
-	text-align: center;
-}
+
 .unresponsive {
 	display: none;
 }
-.aboutbhavika {
-	background: #ccc url("../img/hero-banner2.gif") no-repeat;
-	background-size: cover;
-	background-position: center;	
-	height: 300px;
-	padding: 0px;
-	margin-bottom: 80px;
-	display: flex;
-	align-items: center;
-    justify-content: space-around;
-}
-.aboutletter, .shareit {
-	padding: 0 80px;
-}
 
-#mywork, #events {
-	background-color: #d8e3f3; 
-}
+
 #contact {
 	background: #ccc url("../img/hero-banner1.gif") no-repeat;
 	background-size: cover;
@@ -614,6 +690,7 @@ display: none;
 		display: -webkit-flex; 
 		align-items: center;
 		margin: 0px;
+		
 	}
 #resume h4 {
 		color: steel;
@@ -679,7 +756,7 @@ display: none;
 	content: "";  
 	border-top: 40px solid transparent;
 	border-bottom: 40px solid transparent;
-	border-left: 40px solid #d4f2ff;
+	border-left: 40px solid var(--seafoam);;
 	position: absolute; left: 0; top: 0;
 }
 #chevron ol li:first-child a {
@@ -697,10 +774,10 @@ display: none;
 	display: none; 
 }
 #chevron ol li a.active {
-	background: #3498db;
+	background: var(--magenta);
 }
 #chevron ol li a.active:after {
-	border-left-color: #3498db;
+	border-left-color: var(--magenta);
 }
 .modal-body p img {
 	max-width: 100%;

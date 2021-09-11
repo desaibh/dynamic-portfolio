@@ -4,6 +4,7 @@
 	--seafoam: #19feed;
 	--yellow: #ffee0e;
 	--slate: #212022;
+	--grey: #beb9c3;
 }
 
 * {
@@ -11,6 +12,7 @@
 	padding: 0px;
 	margin: 0px;
 	box-sizing: border-box;
+	position: relative
 }
 h1 {
     text-align: center;
@@ -44,7 +46,7 @@ ul, ol {
 	margin: 0px;
 }
 
-section:before, header:before {
+section:after, article:before {
   content: '';
   width: 100vw;
   height: 10px;
@@ -58,16 +60,16 @@ section:before, header:before {
   linear-gradient(135deg, transparent 0, transparent 47.5%, var(--magenta) 47.5%, var(--magenta) 52.5%, transparent 52.5%, transparent 100%);
   background-size: 10px 10px, 10px 10px, 10px 10px, 10px 10px, 10px 10px ;
   opacity: .5;
-	}
+  z-index: 20;
+}
 section .container {
-	padding: 80px;
 	z-index: 10;
+	padding: 40px;
 }
 
 .sr-only {
 	display: none;
 }
-
 .btn, figcaption p a {
     display: inline-block;
     padding: 6px 12px;
@@ -124,10 +126,10 @@ header::after {
   position: absolute;
   background-repeat: repeat;
 background: 
-linear-gradient(135deg, white 6%, white 9%, var(--seafoam) 9%, var(--seafoam) 12%, white 12%, white 15%, var(--magenta) 15%, var(--magenta) 18%, white 18%, white 25%, transparent 25%),
-linear-gradient(225deg, white 6%, white 9%, var(--magenta) 9%, var(--magenta) 12%, white 12%, white 15%, var(--seafoam) 15%, var(--seafoam) 18%, white 18%, white 25%, transparent 25%),
-linear-gradient(315deg, white 6%, white 9%, var(--seafoam) 9%, var(--seafoam) 12%, white 12%, white 15%, var(--magenta) 15%, var(--magenta) 18%, white 18%, white 25%, transparent 25%),
-linear-gradient(45deg, white 6%, white 9%, var(--magenta) 9%, var(--magenta) 12%, white 12%, white 15%, var(--seafoam) 15%, var(--seafoam) 18%, white 18%, white 25%, transparent 25%);
+linear-gradient(135deg, white 6% 9%, var(--seafoam) 9% 12%, white 12% 15%, var(--magenta) 15% 18%, white 18% 25%, transparent 25%),
+linear-gradient(225deg, white 6% 9%, var(--magenta) 9% 12%, white 12% 15%, var(--seafoam) 15% 18%, white 18% 25%, transparent 25%),
+linear-gradient(315deg, white 6% 9%, var(--seafoam) 9% 12%, white 12% 15%, var(--magenta) 15% 18%, white 18% 25%, transparent 25%),
+linear-gradient(45deg, white 6% 9%, var(--magenta) 9% 12%, white 12% 15%, var(--seafoam) 15% 18%, white 18% 25%, transparent 25%);
 background-size: 6vh 6vh;
 opacity: .5;
 z-index: -1;
@@ -219,17 +221,20 @@ nav#main li.dropdown ul.droptions li:hover, nav#main li:hover, #portfolios .cont
   height: 100%;
   position: absolute;
   background-image: 
-  linear-gradient(to right, transparent 0%, transparent 15%, var(--yellow) 15%, var(--yellow) 20%, transparent 20%, transparent 25%, var(--yellow) 25%, var(--yellow) 30%, transparent 30%, transparent 35%, var(--yellow) 35%, var(--yellow) 40%, transparent 40%, transparent 60%, var(--yellow) 60%, var(--yellow) 65%, transparent 65%, transparent 70%, var(--yellow) 70%, var(--yellow) 75%, transparent 75%, transparent 80%, var(--yellow) 80%, var(--yellow) 85%, transparent 85%, transparent 100%),
-  linear-gradient(to right, transparent 0%, transparent 40%, var(--magenta) 40%, var(--magenta) 45%, var(--seafoam), 45%, var(--seafoam) 55%, var(--magenta) 55%, var(--magenta) 60%, transparent 60%, transparent 100%), 
-  linear-gradient(to right, var(--seafoam), 0%, var(--seafoam) 5%, transparent 5%, transparent 40%, transparent 40%, var(--magenta) 40%, var(--magenta) 45%, transparent 45%, transparent 55%, var(--magenta) 55%, var(--magenta) 60%, transparent 60%, transparent 95%, var(--seafoam) 95%, var(--seafoam) 100%), 
-    linear-gradient(to right, transparent 0%, transparent 40%, var(--magenta) 40%, var(--magenta) 45%, var(--seafoam), 45%, var(--seafoam) 55%, var(--magenta) 55%, var(--magenta) 60%, transparent 60%, transparent 100%), 
-  linear-gradient(to right, transparent 0%, transparent 15%, var(--yellow) 15%, var(--yellow) 20%, transparent 20%, transparent 25%, var(--yellow) 25%, var(--yellow) 30%, transparent 30%, transparent 35%, var(--yellow) 35%, var(--yellow) 40%, transparent 40%, transparent 60%, var(--yellow) 60%, var(--yellow) 65%, transparent 65%, transparent 70%, var(--yellow) 70%, var(--yellow) 75%, transparent 75%, transparent 80%, var(--yellow) 80%, var(--yellow) 85%, transparent 85%, transparent 100%), 
-  linear-gradient(to right, transparent 0%, transparent 40%, var(--magenta) 40%, var(--magenta) 45%, var(--seafoam), 45%, var(--seafoam) 55%, var(--magenta) 55%, var(--magenta) 60%, transparent 60%, transparent 100%), 
-  linear-gradient(to right, var(--seafoam), 0%, var(--seafoam) 5%, transparent 5%, transparent 40%, transparent 40%, var(--magenta) 40%, var(--magenta) 45%, transparent 45%, transparent 55%, var(--magenta) 55%, var(--magenta) 60%, transparent 60%, transparent 95%, var(--seafoam) 95%, var(--seafoam) 100%),
-    linear-gradient(to right, transparent 0%, transparent 40%, var(--magenta) 40%, var(--magenta) 45%, var(--seafoam) 45%, var(--seafoam) 55%, var(--magenta) 55%, var(--magenta) 60%, transparent 60%, transparent 100%), 
-  linear-gradient(to right, transparent 0%, transparent 15%, var(--yellow) 15%, var(--yellow) 20%, transparent 20%, transparent 25%, var(--yellow) 25%, var(--yellow) 30%, transparent 30%, transparent 35%, var(--yellow) 35%, var(--yellow) 40%, transparent 40%, transparent 60%, var(--yellow) 60%, var(--yellow) 65%, transparent 65%, transparent 70%, var(--yellow) 70%, var(--yellow) 75%, transparent 75%, transparent 80%, var(--yellow) 80%, var(--yellow) 85%, transparent 85%, transparent 100%),
-  linear-gradient(to right,transparent 0%, transparent 40%, var(--magenta) 40%, var(--magenta) 45%, var(--seafoam) 45%, var(--seafoam) 55%, var(--magenta) 55%, var(--magenta) 60%, transparent 60%, transparent 100%), 
-  linear-gradient(to right,blue 0%, var(--seafoam) 5%, transparent 5%, transparent 40%, transparent 40%, var(--magenta) 40%, var(--magenta) 45%, transparent 45%, transparent 55%, var(--magenta) 55%, var(--magenta) 60%, transparent 60%, transparent 95%, var(--seafoam) 95%, var(--seafoam) 100%);
+  linear-gradient(to right, transparent 0%  15%, var(--yellow) 15% 20%, transparent 20% 25%, var(--yellow) 25% 30%, transparent 30% 35%, var(--yellow) 35% 40%, transparent 40%  60%, var(--yellow) 60% 65%, transparent 65%  70%, var(--yellow) 70% 75%, transparent 75% 80%, var(--yellow) 80% 85%, transparent 85% 100%),
+  linear-gradient(to right, transparent 0%  40%, var(--magenta) 40% 45%, var(--seafoam) 45%  55%, var(--magenta) 55%  60%, transparent 60% 100%), 
+  linear-gradient(to right, var(--seafoam) 0% 5%, transparent 5% 40%, var(--magenta) 40% 45%, transparent 45% 55%, var(--magenta) 55% 60%, transparent 60% 95%, var(--seafoam) 95% 100%), 
+  linear-gradient(to right, transparent 0%  40%, var(--magenta) 40% 45%, var(--seafoam) 45%  55%, var(--magenta) 55%  60%, transparent 60% 100%), 
+  
+  linear-gradient(to right, transparent 0%  15%, var(--yellow) 15% 20%, transparent 20% 25%, var(--yellow) 25% 30%, transparent 30% 35%, var(--yellow) 35% 40%, transparent 40%  60%, var(--yellow) 60% 65%, transparent 65%  70%, var(--yellow) 70% 75%, transparent 75% 80%, var(--yellow) 80% 85%, transparent 85% 100%),
+  linear-gradient(to right, transparent 0%  40%, var(--magenta) 40% 45%, var(--seafoam) 45%  55%, var(--magenta) 55%  60%, transparent 60% 100%), 
+  linear-gradient(to right, var(--seafoam) 0% 5%, transparent 5% 40%, var(--magenta) 40% 45%, transparent 45% 55%, var(--magenta) 55% 60%, transparent 60% 95%, var(--seafoam) 95% 100%), 
+  linear-gradient(to right, transparent 0%  40%, var(--magenta) 40% 45%, var(--seafoam) 45%  55%, var(--magenta) 55%  60%, transparent 60% 100%), 
+
+  linear-gradient(to right, transparent 0%  15%, var(--yellow) 15% 20%, transparent 20% 25%, var(--yellow) 25% 30%, transparent 30% 35%, var(--yellow) 35% 40%, transparent 40%  60%, var(--yellow) 60% 65%, transparent 65%  70%, var(--yellow) 70% 75%, transparent 75% 80%, var(--yellow) 80% 85%, transparent 85% 100%),
+  linear-gradient(to right, transparent 0%  40%, var(--magenta) 40% 45%, var(--seafoam) 45%  55%, var(--magenta) 55%  60%, transparent 60% 100%), 
+  linear-gradient(to right, var(--seafoam) 0% 5%, transparent 5% 40%, var(--magenta) 40% 45%, transparent 45% 55%, var(--magenta) 55% 60%, transparent 60% 95%, var(--seafoam) 95% 100%);
+
   background-size: 150px 70px;
   background-position: 0 0, 0 70px, 0 140px, 0 210px, 0 280px, 0 350px, 0 420px, 0 490px, 0 560px, 0 630px, 0 700px;
   background-repeat: repeat-x;
@@ -247,9 +252,79 @@ nav#main li.dropdown ul.droptions li:hover, nav#main li:hover, #portfolios .cont
 }
 
 /*PORTFOLIO*/
+
+
 #portfolios {
-    background: #d8e3f3;
+	width: 100vw;
     min-height: 200px;
+	background: white;
+	z-index: 8;
+}
+#portfolios:before {
+	content: '';
+	width: 100%;
+	height: 200vh;
+	margin-top: 10px;
+	position: absolute;
+	background: 	linear-gradient(to right, var(--seafoam) 0% 100% ),
+						linear-gradient(to right, transparent 0% 16.6%, var(--grey) 16.6% 33%, transparent 33% 50%, transparent 50% 66.6%, var(--grey) 66.6% 83%, transparent 83% 100% ),
+						linear-gradient(to right, transparent 0% 16.6%, var(--seafoam) 16.6% 33%, transparent 33% 66.6%, var(--seafoam) 66.6% 83%, transparent 83% 100% ),
+						linear-gradient(to right, transparent 0% 25%,  var(--seafoam) 25% 41.6%, transparent 41.6% 58.3%,  var(--seafoam) 58.3% 74.9%, transparent 74.9% 100% ),
+						linear-gradient(to right, transparent 0% 33%, var(--seafoam) 33% 66.6%, transparent 66.6% 100% ),
+						linear-gradient(to right, transparent 0% 25%,  var(--seafoam) 25% 41.6%, transparent 41.6% 58.3%,  var(--seafoam) 58.3% 74.9%, transparent 74.9% 100% ),
+						linear-gradient(to right, transparent 0% 16.6%, var(--seafoam) 16.6% 33%, transparent 33% 66.6%, var(--seafoam) 66.6% 83%, transparent 83% 100% ),
+						linear-gradient(to right, transparent 0% 16.6%, var(--grey) 16.6% 33%, transparent 33% 50%, transparent 50% 66.6%, var(--grey) 66.6% 83%, transparent 83% 100% ),
+						linear-gradient(to right, var(--seafoam) 0% 100% ),
+			linear-gradient(to right, var(--yellow) 0% 16.6%, transparent 16.6% 33%, var(--yellow) 33% 50%, var(--magenta) 50% 66.6%, transparent 66.6% 83%, var(--magenta) 83% 100% ),
+			linear-gradient(to right, transparent 0% 16.6%, var(--yellow) 16.6% 33%, transparent 33% 50%, transparent 50% 66.6%, var(--magenta) 66.6% 83%, transparent 83% 100% ),
+			linear-gradient(to right, var(--yellow) 0% 16.6%, transparent 16.6% 33%, var(--yellow) 33% 50%, var(--magenta) 50% 66.6%, transparent 66.6% 83%, var(--magenta) 83% 100% ),
+						linear-gradient(to right, var(--seafoam) 0% 100% ),
+						linear-gradient(to right, transparent 0% 16.6%, var(--grey) 16.6% 33%, transparent 33% 50%, transparent 50% 66.6%, var(--grey) 66.6% 83%, transparent 83% 100% ),
+						linear-gradient(to right, transparent 0% 16.6%, var(--seafoam) 16.6% 33%, transparent 33% 66.6%, var(--seafoam) 66.6% 83%, transparent 83% 100% ),
+						linear-gradient(to right, transparent 0% 25%,  var(--seafoam) 25% 41.6%, transparent 41.6% 58.3%,  var(--seafoam) 58.3% 74.9%, transparent 74.9% 100% ),
+						linear-gradient(to right, transparent 0% 33%, var(--seafoam) 33% 66.6%, transparent 66.6% 100% ),
+						linear-gradient(to right, transparent 0% 25%,  var(--seafoam) 25% 41.6%, transparent 41.6% 58.3%,  var(--seafoam) 58.3% 74.9%, transparent 74.9% 100% ),
+						linear-gradient(to right, transparent 0% 16.6%, var(--seafoam) 16.6% 33%, transparent 33% 66.6%, var(--seafoam) 66.6% 83%, transparent 83% 100% ),
+						linear-gradient(to right, transparent 0% 16.6%, var(--grey) 16.6% 33%, transparent 33% 50%, transparent 50% 66.6%, var(--grey) 66.6% 83%, transparent 83% 100% ),
+						linear-gradient(to right, var(--seafoam) 0% 100% ),
+			linear-gradient(to right, var(--yellow) 0% 16.6%, transparent 16.6% 33%, var(--yellow) 33% 50%, var(--magenta) 50% 66.6%, transparent 66.6% 83%, var(--magenta) 83% 100% ),
+			linear-gradient(to right, transparent 0% 16.6%, var(--yellow) 16.6% 33%, transparent 33% 50%, transparent 50% 66.6%, var(--magenta) 66.6% 83%, transparent 83% 100% ),
+			linear-gradient(to right, var(--yellow) 0% 16.6%, transparent 16.6% 33%, var(--yellow) 33% 50%, var(--magenta) 50% 66.6%, transparent 66.6% 83%, var(--magenta) 83% 100% ),
+						linear-gradient(to right, var(--seafoam) 0% 100% ),
+						linear-gradient(to right, transparent 0% 16.6%, var(--grey) 16.6% 33%, transparent 33% 50%, transparent 50% 66.6%, var(--grey) 66.6% 83%, transparent 83% 100% ),
+						linear-gradient(to right, transparent 0% 16.6%, var(--seafoam) 16.6% 33%, transparent 33% 66.6%, var(--seafoam) 66.6% 83%, transparent 83% 100% ),
+						linear-gradient(to right, transparent 0% 25%,  var(--seafoam) 25% 41.6%, transparent 41.6% 58.3%,  var(--seafoam) 58.3% 74.9%, transparent 74.9% 100% ),
+						linear-gradient(to right, transparent 0% 33%, var(--seafoam) 33% 66.6%, transparent 66.6% 100% ),
+						linear-gradient(to right, transparent 0% 25%,  var(--seafoam) 25% 41.6%, transparent 41.6% 58.3%,  var(--seafoam) 58.3% 74.9%, transparent 74.9% 100% ),
+						linear-gradient(to right, transparent 0% 16.6%, var(--seafoam) 16.6% 33%, transparent 33% 66.6%, var(--seafoam) 66.6% 83%, transparent 83% 100% ),
+						linear-gradient(to right, transparent 0% 16.6%, var(--grey) 16.6% 33%, transparent 33% 50%, transparent 50% 66.6%, var(--grey) 66.6% 83%, transparent 83% 100% ),
+						linear-gradient(to right, var(--seafoam) 0% 100% ),
+			linear-gradient(to right, var(--yellow) 0% 16.6%, transparent 16.6% 33%, var(--yellow) 33% 50%, var(--magenta) 50% 66.6%, transparent 66.6% 83%, var(--magenta) 83% 100% ),
+			linear-gradient(to right, transparent 0% 16.6%, var(--yellow) 16.6% 33%, transparent 33% 50%, transparent 50% 66.6%, var(--magenta) 66.6% 83%, transparent 83% 100% ),
+			linear-gradient(to right, var(--yellow) 0% 16.6%, transparent 16.6% 33%, var(--yellow) 33% 50%, var(--magenta) 50% 66.6%, transparent 66.6% 83%, var(--magenta) 83% 100% ),
+					   linear-gradient(to right, var(--seafoam) 0% 100% ),
+						linear-gradient(to right, transparent 0% 16.6%, var(--grey) 16.6% 33%, transparent 33% 50%, transparent 50% 66.6%, var(--grey) 66.6% 83%, transparent 83% 100% ),
+						linear-gradient(to right, transparent 0% 16.6%, var(--seafoam) 16.6% 33%, transparent 33% 66.6%, var(--seafoam) 66.6% 83%, transparent 83% 100% ),
+						linear-gradient(to right, transparent 0% 25%,  var(--seafoam) 25% 41.6%, transparent 41.6% 58.3%,  var(--seafoam) 58.3% 74.9%, transparent 74.9% 100% ),
+						linear-gradient(to right, transparent 0% 33%, var(--seafoam) 33% 66.6%, transparent 66.6% 100% ),
+						linear-gradient(to right, transparent 0% 25%,  var(--seafoam) 25% 41.6%, transparent 41.6% 58.3%,  var(--seafoam) 58.3% 74.9%, transparent 74.9% 100% ),
+						linear-gradient(to right, transparent 0% 16.6%, var(--seafoam) 16.6% 33%, transparent 33% 66.6%, var(--seafoam) 66.6% 83%, transparent 83% 100% ),
+						linear-gradient(to right, transparent 0% 16.6%, var(--grey) 16.6% 33%, transparent 33% 50%, transparent 50% 66.6%, var(--grey) 66.6% 83%, transparent 83% 100% ),
+						linear-gradient(to right, var(--seafoam) 0% 100% ),
+			linear-gradient(to right, var(--yellow) 0% 16.6%, transparent 16.6% 33%, var(--yellow) 33% 50%, var(--magenta) 50% 66.6%, transparent 66.6% 83%, var(--magenta) 83% 100% ),
+			linear-gradient(to right, transparent 0% 16.6%, var(--yellow) 16.6% 33%, transparent 33% 50%, transparent 50% 66.6%, var(--magenta) 66.6% 83%, transparent 83% 100% ),
+			linear-gradient(to right, var(--yellow) 0% 16.6%, transparent 16.6% 33%, var(--yellow) 33% 50%, var(--magenta) 50% 66.6%, transparent 66.6% 83%, var(--magenta) 83% 100% );
+  background-size:  180px 30px;
+  background-position: 0 0, 0 30px, 0 60px, 0 90px, 0 120px, 0 150px, 0 180px, 0 210px, 0 240px, 0 270px, 0 300px, 0 330px, 
+  								 0 360px, 0 390px, 0 420px, 0 450px, 0 480px, 0 510px, 0 540px, 0 570px, 0 600px, 0 630px,  0 660px, 0 690px, 
+								 0 720px, 0 750px, 0 780px, 0 810px, 0 840px, 0 870px, 0 900px, 0 930px, 0 960px, 0 990px, 0 1020px, 0 1050px, 
+								 0 1080px, 0 1110px, 0 1140px, 0 1170px, 0 1200px, 0 1230px,  0 1260px, 0 1290px, 0 1320px, 0 1350px, 0 1380px, 0 1410px;
+  background-repeat: repeat-x;
+  z-index: 9;
+  opacity: .5
+}
+#portfolios .container * {
+	z-index: 11;
 }
 #portfolios .controls {
     width: 100%;
@@ -273,13 +348,31 @@ nav#main li.dropdown ul.droptions li:hover, nav#main li:hover, #portfolios .cont
 #portfolios .container .projects-container .projects {
 	display: flex;
 	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
 	margin: 0 auto;
 	text-align: center;
-	max-width: 1080px;
+	max-width: 700px;
 	gap: 25px;
+	max-width: 1080ps;
+}
+#portfolios .container .projects-container .projects .project:nth-child(odd)  {
+	transform: rotate(45deg);
+}
+#portfolios .container .projects-container .projects .project:nth-child(even)  {
+	transform: rotate(135deg) scale(1,-1);
+}
+#portfolios .container .projects-container .projects .project:nth-child(even)  p {
+	transform: scale(-1, 1);
+}
+#portfolios .container .projects-container .projects .project:nth-child(even) figure figcaption {
+	flex-direction: row-reverse
 }
 #portfolios .container .projects-container .projects .project figure  {
 	flex: 1;
+}
+#portfolios .container .projects-container .projects .project figure  img {
+    clip-path: polygon(1% 0%, 0% 100%, 100% 100%);
 }
 #portfolios .container .projects-container .projects .project figure figcaption {
 	display: flex;
