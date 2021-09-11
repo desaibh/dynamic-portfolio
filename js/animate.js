@@ -7,7 +7,7 @@ var f,g,h;
  for (f = 0; f < chevron.length; f++)  {
 	 chevron[f].addEventListener('click', function (e) {
 		carousel[previousItem].style = null;
-		previousItem = e.path[1].dataset.slideTo;
+		previousItem = this.dataset.slideTo;
 		carousel[previousItem].style.animation = ' rotateFirst 2000s forwards';
 	 });
 }
@@ -69,7 +69,7 @@ var f,g,h;
  
  for (a = 0; a < controls.length; a++)  {
 	 controls[a].addEventListener('click', function (e) {
-		 cube(e.path[0].innerHTML);
+		 cube(this.innerHTML);
 	 });
 }
 
@@ -117,7 +117,7 @@ rlocation[5] = ['Project Gutenberg',0,2,3,1];
 
 for (c = 0; c < togglers.length; c++)  {
 	 togglers[c].addEventListener('click', function (e) {
-				 arrow = e.path[0].classList[1];
+				 arrow = this.classList[1];
 				 currentState = false;
 				 controls[control].classList.remove('active');
 				 d = 0;
@@ -428,10 +428,11 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
      topic = document.createElement('div');
 	 resumeTopics[p].prepend(topic);
 	 resumeTopics[p].addEventListener('click', function (e) {
-		 var btn = e.path[2].dataset.slideTo;
+		 console.log(e.target.value);
+		 var btn = e.target.parentNode.parentNode.dataset.slideTo;
 		 var modal = document.getElementsByClassName('subsections')[0];
 		 var span = document.querySelectorAll(".subsections div .close")[btn];
-		 console.log(modal, modal.children[btn]);
+		 console.log(modal, btn, modal.children[btn]);
 	      modal.children[btn].classList.add('modal-content');
 		  modal.style.display = "block";
 		  modal.children[btn].style.display = "block";

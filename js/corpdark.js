@@ -35,7 +35,8 @@ for (a = 0; a<navLinks.length; a++) {
 		 		navLinks[i].classList.remove('active');
 		}
  		this.classList.add('active');
-		c = e.path[1].attributes['data-toggle'].value;
+			c = this.parentNode.attributes['data-toggle'].value;
+		
 	});
 }
 
@@ -115,7 +116,8 @@ for (d = 0; d < chevron.length; d++) {
 		chevron[d].addEventListener('click', function (e) {
 			chevron[nowActive].classList.remove('active');
 			this.classList.add('active');
-			nowActive = e.path[1].dataset.slideTo;
+				nowActive = this.parentNode.dataset.slideTo;
+			
 			var vw = Math.max(document.documentElement.clientWidth);
 			if  (vw > 500) {
 				transitionCalculation = nowActive * -464;
@@ -146,27 +148,33 @@ for (f = 0;  f < btns.length; f++) {
 			if (clicked.includes(modalid)) {
 				modals[g].classList.remove('fade');
 				span[g].onclick = function(e) {
-				  e.path[4].className = 'modal fade';
+						this.parentNode.parentNode.parentNode.parentNode.className = 'modal fade';	
 				}
 				modals[g].onclick = function(e) {
-				  if (e.path[0].className == 'modal') {
-					e.path[0].className = 'modal fade';
-				  }  else if (e.path[0].className == 'modal-dialog') {
-					e.path[1].className = 'modal fade';
-				  }
+						if (this.className == 'modal') {
+							this.className = 'modal fade';
+						  }  else if (this.className == 'modal-dialog') {
+							this.parentNode.className = 'modal fade';
+						  }
+					
 				}
 			}	
 			ftrClose[g].onclick = function(e) {
-				  e.path[4].className = 'modal fade';
+				  this.parentNode.parentNode.parentNode.parentNode.className = 'modal fade';
 			}
 			if (g !== (btns.length-1)) {
 				ftrNext[g].onclick = function(e) {
-					  e.path[4].className = 'modal fade';
-					  e.path[4].nextSibling.nextSibling.classList.remove('fade');
+					  this.parentNode.parentNode.parentNode.parentNode.className = 'modal fade';
+					  this.parentNode.parentNode.parentNode.parentNode.nextSibling.nextSibling.classList.remove('fade');
+					  this.parentNode.parentNode.parentNode.parentNode.nextSibling.nextSibling.addEventListener('click', function () {
+						  if (this.className == 'modal') {
+							  this.className = 'modal fade';
+						  }  else if (this.className == 'modal-dialog') {
+								this.parentNode.className = 'modal fade';
+						  }
+					  });
 				}
-			}
-
-			
+			}			
 		}
 	}
 }
