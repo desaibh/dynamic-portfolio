@@ -1007,14 +1007,10 @@ nav#main .menuitems ul li.dropdown:hover ul.droptions {
 .resumetopics {
 	transform: scale(.7) translate(-100px, -30vh);
 }
-
 #home h1 { 
    margin-top: 48px;
  }
  body {
 	 width: 100vw;
 }
-
-
-
 }

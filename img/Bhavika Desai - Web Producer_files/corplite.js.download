@@ -60,8 +60,53 @@ for (f = 0;  f < btns.length; f++) {
 					  e.path[4].nextSibling.nextSibling.classList.remove('fade');
 				}
 			}
-
 			
 		}
 	}
+}
+
+
+
+
+//RESUME - CiRCULAR PROGRESS BAR
+var h, svg, circle, txt, circumference;
+var slate =  getComputedStyle(document.documentElement).getPropertyValue('--slate');
+var skillsbox = document.querySelectorAll('#skills-sub-types .boxes .box');
+
+for  (h = 0; h < skillsbox.length; h++) {
+	svg = document.createElementNS("http://www.w3.org/2000/svg", 'svg');
+	svg.setAttribute('class','progressbar');
+    svg.setAttribute('width','60');
+    svg.setAttribute('height','60');
+	
+	circle = document.createElementNS("http://www.w3.org/2000/svg", 'circle');
+	circle.setAttribute('class','progressbar__circle');
+	circle.setAttribute('stroke',slate);
+	circle.setAttribute('stroke-width','5');
+	circle.setAttribute('fill','transparent');
+	circle.setAttribute('r','25');
+	circle.setAttribute('cx','30');
+	circle.setAttribute('cy','30');
+	
+	txt = document.createElementNS("http://www.w3.org/2000/svg", 'text');
+	txt.setAttribute('x','50%');
+	txt.setAttribute('y','50%');
+	txt.setAttribute('text-anchor','middle');
+	txt.setAttribute('stroke', slate);
+	txt.setAttribute('stroke-width','1px');
+	txt.setAttribute('dy','.3em');
+	if (skillsbox[h].classList.contains('eighty')) {
+		txt.innerHTML = '80%';
+	} else if (skillsbox[h].classList.contains('eightyfive')) {
+		txt.innerHTML = '85%';
+	} else if (skillsbox[h].classList.contains('ninety')) {
+		txt.innerHTML = '90%';
+	} else if (skillsbox[h].classList.contains('ninetyfive')) {
+		txt.innerHTML = '95%';
+	}
+	
+	svg.prepend(txt);
+	svg.prepend(circle);
+	skillsbox[h].prepend(svg);
+
 }
