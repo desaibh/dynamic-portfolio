@@ -1,8 +1,20 @@
+//FONT-AWESOME
+var faCSS, docHead;
+faCSS = document.createElement('link');
+faCSS.setAttribute('rel', 'stylesheet');
+faCSS.setAttribute('href', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css');
+faCSS.setAttribute('type','text/css');
+docHead = document.getElementsByTagName('head')[0];
+docHead.appendChild(faCSS);
+
+
+
+//IGNORE
 function responsive() {
     document.getElementById('navmenu').classList.toggle('responsive');
-    document.getElementById('blockquote').classList.toggle('unresponsive');	    	    
 }
 
+//CHEVRON
 function chevron() {
    var chevrons = document.querySelectorAll('#chevron .chevron li a');
    var designItems = document.querySelector('#designCarousel .carousel-inner');
@@ -65,9 +77,6 @@ for (f = 0;  f < btns.length; f++) {
 	}
 }
 
-
-
-
 //RESUME - CiRCULAR PROGRESS BAR
 var h, svg, circle, txt, circumference;
 var slate =  getComputedStyle(document.documentElement).getPropertyValue('--slate');
@@ -110,3 +119,18 @@ for  (h = 0; h < skillsbox.length; h++) {
 	skillsbox[h].prepend(svg);
 
 }
+
+/*COLOR PICKER*/
+var palette = document.createElement('div');
+palette.setAttribute('id','palette');
+palette.innerHTML = '<input type="color" id="c" tabindex=-1 class="hidden"> <i class="fas fa-palette"></i>';
+document.body.appendChild(palette);
+
+document.getElementById("palette").addEventListener("click", function() {
+  document.getElementById("c").focus();
+  document.getElementById("c").addEventListener('blur', function(e) {
+	  document.documentElement.style.setProperty('--seafoam', e.target.value);
+  });
+  document.getElementById("c").click();
+});
+

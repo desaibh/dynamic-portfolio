@@ -568,7 +568,7 @@ section#process:before {
 	linear-gradient(-63deg, transparent 90%, var(--slate) 90%),
 	linear-gradient(180deg, transparent 80%, var(--seafoam) 80%),
 	linear-gradient(90deg, transparent 42.5%, var(--grey) 42.5% 47.5%, transparent 47.5% 52.5%, var(--grey) 52.5% 57.5%, transparent 57.5%),
-	linear-gradient(90deg, transparent 47.5%, var(--yellow) 47.5% 52.5%, transparent 52.5%),
+	linear-gradient(90deg, transparent 47.5%, var(--slate) 47.5% 52.5%, transparent 52.5%),
 	linear-gradient(90deg, transparent 47.5%, var(--grey) 47.5% 52.5%, transparent 52.5%),
 	linear-gradient(135deg, white 20%,transparent 20%),
 	linear-gradient(225deg, white 20%,transparent 20%),
@@ -604,6 +604,8 @@ section#process:before {
   		color: var(--slate);
 		background: #eff0f1; 
 		padding: 20px 40px 40px 40px;
+		margin-top: -1px;
+		border: 10px groove var(--grey);
 }
 #resume .boxes {
 		display: flex;
@@ -884,6 +886,30 @@ section#process:before {
 	border-left-color: var(--magenta);
 }
 
+/*COLOR PICKER*/
+#palette {
+   width: 60px;
+   height: 60px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   position: fixed;
+   top: 60px;
+   right: 5px;
+   background: var(--yellow);
+   border-radius: 50%;
+   z-index: 1000;
+}
+#palette #c.hidden {
+  position: absolute;
+  top: auto;
+  width: 0px;
+  height: 0px;
+  overflow: hidden;
+  background: transparent;
+  color: transparent;
+  border: none;
+}
 	
 @media screen and (max-width: 775px) {
 
@@ -984,6 +1010,9 @@ nav#main .menuitems ul li.dropdown:hover ul.droptions {
 		padding-left: 30px;
 		padding-right: -30px;
 	}
+#contact img {
+	margin-top: 50px;
+}
 }
 @media screen and (max-width: 530px) {
 
@@ -997,10 +1026,13 @@ nav#main .menuitems ul li.dropdown:hover ul.droptions {
     top: 0px;
     background: white;
  }
+
 }
 @media screen and (max-width: 400px) {
  #home .container .card {
      width: 100vw;
 	 padding-left: 80px;
 	 padding-right: 80px;
+}
+
 }
