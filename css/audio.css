@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=VT323&family=DotGothic16&display=swap');
+
+* {
+	padding: 0px;
+	margin: 0px;
+	font-family: 'VT323', 'DotGothic16', sans-serif, 'Monoton', cursive;
+	box-sizing: border-box;
+	position: relative;
+}
+
+
+/*Typography*/
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Monoton', cursive;
+	font-weight: 300;
+}
+h1 {
+	font-size: 3em;
+}
+h2 {
+	font-size:1.9em;
+}
+ul, ol {
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}
+p, ul li {
+	font-size: 2em;
+}
+a {
+	color: white;
+  	background: -webkit-linear-gradient(45deg, purple, pink, orange, sienna, orange, pink, purple);
+  	-webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;
+}
+@supports (background-clip: text) {
+  a {
+    background-image: linear-gradient(45deg, purple, pink, orange, sienna, orange, pink, purple);
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+a:hover {
+	-webkit-text-fill-color: white;
+	color: white;
+	text-decoration: none;
+}
+.sr-only {
+	display: none;
+}
+#home .content .card .content p:nth-child(1) a {
+	
+}
+
+/*Containers*/
+article {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: row;
+	padding: 10vh 10vw;
+	scroll-behavior: smooth;
+	scroll-snap-type: mandatory;
+	scroll-snap-type: both mandatory;
+	overscroll-behavior-x: contain;
+	overflow-y: auto;
+}
+section {
+	min-width: 100vw;
+	height: 100vh;
+	scroll-snap-align: center;
+}
+section .container {
+	padding: 15vh 5vw;
+}
+
+/*Menu + Header Container*/
+header {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+nav {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 6;
+}
+#navlogo, #mainLabel {
+	flex: 1;
+}
+.trigram {
+	display: none;
+}
+.menuitems {
+	flex: 6;
+}
+header .container {
+	width: 100vw;
+	text-align: center;
+}
+header .container,  #main .menuitems ul {
+	height: 5vh;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+	z-index: 1;
+}
+#main .menuitems ul  li {
+	flex: 1;
+}
+#main .menuitems ul  li .droptions {
+	display: none;
+}
+
+
+/*Home*/
+#home {
+	background: linear-gradient(180deg, blue, purple)
+}
+#home .card:before {
+    content: "";
+    float: left;
+    height: 100%;
+    width: 50%;
+    shape-outside: polygon(
+    0 0,
+    59% 0,
+    33% 6%,
+    23.4% 17.3%,
+    6% 32.6%,
+    0 50%,
+    6% 65.6%,
+    23.4% 82.7%,
+    50% 94%,
+    98% 100%,
+    0 100%
+  );
+    shape-margin: 7%;
+}
+#home  .card{
+	width: 650px;
+	height: 650px;
+	padding-top: 31px;
+	padding-right: 31px;
+	clip-path: circle(50% at 50% 50%);
+	background: linear-gradient(180deg, sienna, orange, pink, purple);
+}
+#home  div.logo h1:before {
+	content: "Hello! \A I'm  ";
+	white-space:pre;
+}
+#home  div.logo h1:after {
+	content: "!";
+}
+#home  div.logo h2:before {
+	content: "A ";
+}
+.start-chat {
+	margin-top: 20px;
+}
+.start-chat a {
+		font-family: 'Monoton', cursive;
+		font-size: 45px;
+		padding:20px;
+}
+.start-chat a::before {
+	content: '';
+	background-image: linear-gradient(60deg, purple, blue);
+	border-radius: 5%;
+	width: 306px;
+	height: 50px;
+	position: absolute;
+	z-index: -2;
+	border-radius: 200px;
+	padding: 9px;
+	margin-left: -20px;
+}
+#home > div > div.card > div.content > p:nth-child(1) > a{
+	background-image: linear-gradient(60deg, purple, blue);	
+
+	
+}
+
+
+
+/*Portfolio*/
+#potfolios {}
+#portfolios  .projects-container .projects .project figure {
+  filter: drop-shadow(-1px 6px 5px rgba(0, 0, 0, 0.5));
+}
+#portfolios  .projects-container .projects .project figure  img {
+	clip-path: polygon(0% 0%, 0% 100%, 100% 100%);
+  filter: drop-shadow(-1px 6px 5px rgba(0, 0, 0, 0.5));
+}
