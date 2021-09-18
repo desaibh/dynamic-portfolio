@@ -3,8 +3,8 @@
 var homeContent = document.querySelector('#home .container .card .content');
 var homeBtn = document.createElement('p');
 homeBtn.classList.add("start-chat");
-homeBtn.innerHTML = 'Got some time? <br><a href="" class="btn btn-primary">Let\'s chat!</a>  <br> bot style...';
-homeContent.appendChild(homeBtn);
+homeBtn.innerHTML = '<br><a href="https://www.linkedin.com/in/desaibh/" class="btn btn-primary">Let\'s chat!</a>  ';
+homeContent.appendChild(homeBtn)
 
 
 /*TABS*/
@@ -25,3 +25,4 @@ function createTabIndex(arr) {
 }
 
 createTabIndex(x);
+
