@@ -144,6 +144,7 @@ header .container,  #main .menuitems ul {
     margin-right: 20px;
 }
 
+
 /*Home*/
 #home .logo h2 {
 	visibility: hidden;
@@ -190,6 +191,7 @@ header .container,  #main .menuitems ul {
 		font-family: 'Monoton', cursive;
 		font-size: 45px;
 		padding:20px;
+		border: none;
 }
 .start-chat a::before {
 	content: '';
@@ -232,40 +234,72 @@ header .container,  #main .menuitems ul {
     text-align: center;
 	transform-origin: center;
 	transform-style: preserve-3d;
+    transition: transform 2s;
 }
 .projects .project:nth-child(1) 		{
-	transform: rotateY(60deg) translateZ(400px)
+	transform: rotateY(0deg) translateZ(400px) perspective(1500px);
 }
 .projects .project:nth-child(2) 		{
-	transform: rotateY(120deg) translateZ(400px)
+	transform: rotateY(60deg) translateZ(400px) perspective(1500px)
 }
 .projects .project:nth-child(3) 		{
-	transform: rotateY(180deg) translateZ(400px)
+	transform: rotateY(120deg) translateZ(400px) perspective(1500px);
 }
 .projects .project:nth-child(4) 		{
-	transform: rotateY(240deg) translateZ(400px)
+	transform: rotateY(180deg) translateZ(400px) perspective(1500px);
 }
 .projects .project:nth-child(5) 		{
-	transform: rotateY(300deg) translateZ(400px)
+	transform: rotateY(240deg) translateZ(400px) perspective(1500px);
 }
 .projects .project:nth-child(6) 		{
-	transform: rotateY(360deg) translateZ(400px)
-}
-.projects .project:nth-child(7) 		{
-	transform: rotateY(315deg) translateZ(400px)
-}
-.projects .project:nth-child(8) 		{
-	transform: rotateY(360deg) translateZ(600px)
+	transform: rotateY(300deg) translateZ(400px) perspective(1500px);
 }
 .projects .project figure img {
 	-webkit-box-reflect: below 0px linear-gradient(transparent, transparent, rgba(0,0,0,.2));
     border: 10px navy inset;
 }
 .projects .project figure figcaption  {
-	margin-top: -200px;
+	width: 50%;
+	margin: -200px auto;
+	background-image: linear-gradient(to bottom right, #0f051e, #2e2a35);
+	border: 9px #2c2c2c inset;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	border-radius: 5%;
 }
 .projects .project figure figcaption h4  {
 	display: none;
+}
+#portfolios .container .projects-container .projects  figure figcaption p {
+	flex: 1;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 5px;
+    background: var(--text);
+    font-size: 17px;
+    overflow: hidden;
+	text-align: center;
+}
+#portfolios .container .projects-container .projects  figure figcaption p a {
+    padding: 6px;
+    -webkit-text-fill-color: white;
+    text-decoration: none;
+	
+}
+#portfolios .container .projects-container .projects figure figcaption p:nth-child(2) a:before {
+    content: url(../img/icon-website.png);
+    margin-right: 10px;
+    position: relative;
+    top: 4px;
+}
+#portfolios .container .projects-container .projects  figure figcaption p:nth-child(3) a:before {
+    content: url('../img/icon-github.png');
+    margin-right: 10px;
+    position: relative;
+    top: 4px;
 }
 #portfolios div div.controls {
 	position: absolute;
@@ -274,11 +308,24 @@ header .container,  #main .menuitems ul {
 }
 #portfolios div div.controls ul  {
 	transform-style: preserve-3d;
+	transform: rotateY(9deg);
+}
+#portfolios div div.controls .arrowup, #portfolios div div.controls .arrowdown  {
+	position: absolute;
+	left: 286px;
+	width: 20px;
+	height: 10px;
+}
+#portfolios div div.controls .arrowup {
+	top: -68px;
+} 
+#portfolios div div.controls .arrowdown  {
+	top: -21px;
 }
 #portfolios div div.controls ul li, .projects .project figure  figcaption  p a {
-	    background-image: linear-gradient(172deg, purple, blue);
-		 text-align: center;
-   		 padding: 10px 20px;
+	background-image: linear-gradient(172deg, purple, blue);
+	text-align: center;
+   	padding: 10px 20px;
 }
 #portfolios div div.controls ul li {
 	height: 50px; 
@@ -287,25 +334,364 @@ header .container,  #main .menuitems ul {
 	bottom: 0px;
 	transform-style: preserve-3d;
 	transform-origin: center;
+	transition: transform 2s;
 }
 #portfolios div div.controls ul li:nth-child(1) {
-	transform: rotateX(60deg) translateZ(50px);
+	transform: rotateX(0deg) translateZ(50px);
 }
 #portfolios div div.controls ul li:nth-child(2) {
-	transform: rotateX(120deg) translateZ(50px);
+	transform: rotateX(60deg) translateZ(50px);
 }
 #portfolios div div.controls ul li:nth-child(3) {
-	transform: rotateX(180deg) translateZ(50px);
+	transform: rotateX(120deg) translateZ(50px);
 }
 #portfolios div div.controls ul li:nth-child(4) {
-	transform: rotateX(240deg) translateZ(50px);
+	transform: rotateX(180deg) translateZ(50px);
+	font-size: 27px;
 }
 #portfolios div div.controls ul li:nth-child(5) {
-	transform: rotateX(300deg) translateZ(50px);
+	transform: rotateX(240deg) translateZ(50px);
 }
 #portfolios div div.controls ul li:nth-child(6) {
-	transform: rotateX(360deg) translateZ(50px);
+	transform: rotateX(300deg) translateZ(50px);
 }
+
+
+/*Process*/
+#process .container {
+	width: 100vw;
+	height: 100vh;
+	background-image:linear-gradient(10deg, transparent, pink, transparent);
+}
+#process .container:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    border-right: 1% blue solid;
+    background-image: linear-gradient( 60deg, 
+	blue 0% .5%, transparent .5% 5.5%, 
+	blue 5.5% 6%, transparent 6% 11%, 
+	blue 11% 11.5%, transparent 11.5% 16.5%, 	
+	blue 16.5% 17%, transparent 17% 22%, 
+	blue 22% 22.5%, transparent 22.5% 27.5%, 
+	blue 27.5% 28%, transparent 28% 33%, 
+	blue 33% 33.5%, transparent 33.5% 38.5%,  
+	blue 38.5% 39%, transparent 39% 44%, 
+	blue 44% 44.5%, transparent 44.5% 49.5%,
+	blue 49.5% 51%, transparent 51% 55%, 	 
+	blue 55% 55.5%, transparent 55% 60.5%, 
+	blue 60.5% 61%, transparent 61% 66%, 	
+	blue 66% 66.5%, transparent 66.5% 71.5%, 
+	blue 71.5% 72%, transparent 72% 77%, 
+	blue 77% 77.5%, transparent 77.5% 82.5%, 
+	blue 82.5% 83%, transparent 83% 88%,  
+	blue 88% 88.5%, transparent 88.5% 93.5%, 
+	blue 93.5% 94%, transparent 94% 99%,
+	blue 99% 99.5%, transparent 99.5% 100%),
+	 linear-gradient(-60deg, 
+	blue 0% .5%, transparent .5% 5.5%, 
+	blue 5.5% 6%, transparent 6% 11%, 
+	blue 11% 11.5%, transparent 11.5% 16.5%, 	
+	blue 16.5% 17%, transparent 17% 22%, 
+	blue 22% 22.5%, transparent 22.5% 27.5%, 
+	blue 27.5% 28%, transparent 28% 33%, 
+	blue 33% 33.5%, transparent 33.5% 38.5%,  
+	blue 38.5% 39%, transparent 39% 44%, 
+	blue 44% 44.5%, transparent 44.5% 49.5%,
+	blue 49.5% 51%, transparent 51% 55%, 	 
+	blue 55% 55.5%, transparent 55% 60.5%, 
+	blue 60.5% 61%, transparent 61% 66%, 	
+	blue 66% 66.5%, transparent 66.5% 71.5%, 
+	blue 71.5% 72%, transparent 72% 77%, 
+	blue 77% 77.5%, transparent 77.5% 82.5%, 
+	blue 82.5% 83%, transparent 83% 88%,  
+	blue 88% 88.5%, transparent 88.5% 93.5%, 
+	blue 93.5% 94%, transparent 94% 99%,
+	blue 99% 99.5%, transparent 99.5% 100%), 
+	  linear-gradient( 180deg, 
+	blue 0% .5%, transparent .5% 5.5%, 
+	blue 5.5% 6%, transparent 6% 11%, 
+	blue 11% 11.5%, transparent 11.5% 16.5%, 	
+	blue 16.5% 17%, transparent 17% 22%, 
+	blue 22% 22.5%, transparent 22.5% 27.5%, 
+	blue 27.5% 28%, transparent 28% 33%, 
+	blue 33% 33.5%, transparent 33.5% 38.5%,  
+	blue 38.5% 39%, transparent 39% 44%, 
+	blue 44% 44.5%, transparent 44.5% 49.5%,
+	blue 49.5% 51%, transparent 51% 55%, 	 
+	blue 55% 55.5%, transparent 55% 60.5%, 
+	blue 60.5% 61%, transparent 61% 66%, 	
+	blue 66% 66.5%, transparent 66.5% 71.5%, 
+	blue 71.5% 72%, transparent 72% 77%, 
+	blue 77% 77.5%, transparent 77.5% 82.5%, 
+	blue 82.5% 83%, transparent 83% 88%,  
+	blue 88% 88.5%, transparent 88.5% 93.5%, 
+	blue 93.5% 94%, transparent 94% 99%,
+	blue 99% 99.5%, transparent 99.5% 100%  );
+    background-size: 50% 50%, 50% 50%, 100% 50%;
+    background-position: top right, top left, bottom;
+    background-repeat: no-repeat;
+    opacity: .7;
+}
+#designCarousel .container:after {
+	
+}
+#chevron ol, #designCarousel div.carousel-inner {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	align-items: center;
+	justify-contents: center;
+}
+#designCarousel div.carousel-inner {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	border-radius: 50%;
+    background: conic-gradient(black, blue, purple, orange, purple, blue,black);
+}
+#chevron ol li, #designCarousel div.carousel-inner .item {
+	flex: 1;
+}
+#process #chevron {
+	display: flex;
+	justify-content: center;
+}
+#process #chevron ol {
+    list-style-type: none;
+    display: flex;
+    max-width: 700px;
+    align-content: center;
+    justify-content: center;
+	flex: 1;
+	flex-wrap: wrap;
+	margin: 60px 40px -20px 40px;
+	padding: 0px
+}
+#process #chevron ol li {
+	text-align: center;
+    flex: 1;
+	min-width: 120px;
+	min-height: 50px;
+}
+#process #chevron ol li:after {
+    content: '»';
+    color: var(--text);
+    padding: -2px;
+    font-size: 17px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-left: 24px solid var(--text);
+    border-bottom: 11px solid transparent;
+    z-index: 2;
+}
+#process #chevron ol li a {
+	
+    padding: 10px;
+    margin-bottom: 20px;
+}
+#process .container .carousel-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+	margin: 0 auto;
+	height: 60vh;
+    overflow: hidden;
+	box-sizing: border-box
+}
+#process .container .carousel-inner #carousel-items {
+	display: flex;
+    flex-wrap: wrap;
+	transition: 2s transform;
+}
+#process .container .carousel-inner:before, #process .container .carousel-inner #carousel-items:before {
+	display: table;
+    content: " ";
+}
+
+#process .container .carousel-inner  .item {
+	flex-grow: 1;
+    display: flex;
+    align-items: center;
+	    position: relative;
+    padding: 100px 20px;
+    border: 1px var(--border) solid;
+    width: 100%;
+    min-height: 220px;
+    background: var(--background);
+	margin-top: 30px;
+}
+#process .container .carousel-inner  .item:before {
+	content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: rgba(255,255,255,0.05);
+    pointer-events: none;
+}
+#process .container .carousel-inner  .item h2 {
+    position: absolute;
+    top: 60px;
+    right: 0px;
+    font-size: 7em;
+    font-weight: 600;
+    transition: 0.5s;
+    color: rgba(255,255,255,0.05);
+    min-height: 90px;
+	text-align: center;
+}
+#process .container .carousel-inner .item:hover h2, .modal .modal-content h4, .modal .modal-content h6 {
+    top: 0px;
+    color: rgba(255,255,255, 0.8);
+	text-shadow: 2px 3px var(--accent);
+	transition: top 1s, color 1s, text-shadow 1s;
+}
+#process .container .carousel-inner .item .card {
+	flex: 1;
+	box-sizing: border-box;
+	align-self: baseline;
+	margin-top: 30px;
+}
+#process .container .carousel-inner .item .card-body {
+	padding: 20px;
+}
+#process .container .carousel-inner .item .card-body .card-text {
+	padding-bottom: 20px;
+	color: white;
+	font-size: 24px;
+}
+#process .container .carousel-inner .item .card-body a, #process .container .carousel-inner .item .card-body a:visited {
+    text-align: center;
+    color: white;
+	border: 1px rgba(255,255,255,0.5) solid;
+    padding: 11px;
+    border-radius: 6px;
+	text-decoration: none;
+}
+.btn {
+    background: var(--background);
+    text-align: center;
+    color: var(--text);
+	border: 1px rgba(255,255,255,0.5) solid;
+    padding: 11px;
+    border-radius: 6px;
+	text-decoration: none;
+}
+#process .container .carousel-inner .item .card-body a:hover, .btn:hover {
+    color: linear-gradient(to right, purple, blue);
+	transition: .5s color ease-in, .5s background ease-in;
+	}
+#process h3 {
+	color: white;
+	font-size: 1.5em;
+	margin-bottom: 10px;
+}
+
+
+/*Modal*/
+.modal {
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow-y: scroll; 
+  scrollbar-gutter: auto;
+  background-color: rgba(0,0,0,0.4); 
+ }
+ .modal .modal-content {
+  background: white;
+  margin: 15% auto;
+  border: 1px solid #888;
+  width: 80%; 
+}
+ .modal .modal-content > div {
+  padding-right: 20px;
+ }
+.modal .modal-content h4, .modal .modal-content h6, .modal .modal-content p,  .modal .modal-content ul li {
+	color: var(--background);
+}
+.modal .modal-content h4 {
+	font-size: 3em;
+	font-weight: 600;
+	min-height: 54px;
+	line-height: 45px;
+    margin: 20px;
+}
+.modal .modal-content h6 {
+	font-size: 2em;
+	line-height: 45px;
+	font-weight: 600;
+	margin: 20px 0px 0px 0px;
+}
+.modal .modal-content .modal-body {
+	display: flex;
+	flex: 1;
+	flex-wrap: wrap;
+	width: 100%;
+	flex-direction: row;
+	align-content: top;
+	justify-content: space-around;
+	gap: 12px;
+	box-sizing: border-box;
+}
+.modal .modal-content .modal-body .item {
+	flex: 1;
+	text-align: center;
+	min-width: 500px;
+	
+}
+.modal .modal-content .modal-body .item img {
+	max-width: 500px;
+}
+.modal .modal-content .modal-body .item ul {
+	list-style-type: none;
+	max-width: 700px;
+	margin: 0 auto;
+	padding: 0 20px;
+	text-align: left;
+	line-height: 32px;
+	
+}
+.modal .modal-content .modal-body .item ul li:before{
+	content: 'ðŸ’¡  '
+}
+.modal .modal-content .modal-footer {
+	margin: 20px 0px;;
+	text-align: right;
+}
+
+.fade {
+	  display: none; 
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: var(--border);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+	
+	
+
+
 /** UNUSED TRIANGLES
 #portfolios .container .controls {
 	display: none;

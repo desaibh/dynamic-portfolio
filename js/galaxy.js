@@ -454,7 +454,7 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
 }
 
 /*TABS*/
-var ii, ti = 0
+var a, ti = 0
 var navTabs = document.querySelectorAll('nav ul li a');
 var homeTabs = document.querySelectorAll('#home a');
 var portfolioTabs = document.querySelectorAll('#portfolio a');
@@ -464,10 +464,8 @@ var contactTabs = document.querySelectorAll('#contact a');
 var x = [...navTabs, ...homeTabs, ...portfolioTabs, ...processTabs, ...resumeTabs, ...contactTabs];
 
 function createTabIndex(arr) {
-	for (ii = 0; ii < arr.length; a++) {
-		arr[a].setAttribute('tabIndex',ii);
-		ii++;
+	for (a = 0; a < arr.length; a++) {
+		arr[a].setAttribute('tabIndex',a);
 	}
 }
-
 createTabIndex(x);
