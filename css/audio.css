@@ -101,6 +101,7 @@ header {
 	position: absolute;
 	top: 0px;
 	left: 0px;
+	margin-top: 20px;
 }
 nav {
 	display: flex;
@@ -363,79 +364,6 @@ header .container,  #main .menuitems ul {
 	height: 100vh;
 	background-image:linear-gradient(10deg, transparent, pink, transparent);
 }
-#process .container:before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    bottom: 0;
-    left: 0;
-    border-right: 1% blue solid;
-    background-image: linear-gradient( 60deg, 
-	blue 0% .5%, transparent .5% 5.5%, 
-	blue 5.5% 6%, transparent 6% 11%, 
-	blue 11% 11.5%, transparent 11.5% 16.5%, 	
-	blue 16.5% 17%, transparent 17% 22%, 
-	blue 22% 22.5%, transparent 22.5% 27.5%, 
-	blue 27.5% 28%, transparent 28% 33%, 
-	blue 33% 33.5%, transparent 33.5% 38.5%,  
-	blue 38.5% 39%, transparent 39% 44%, 
-	blue 44% 44.5%, transparent 44.5% 49.5%,
-	blue 49.5% 51%, transparent 51% 55%, 	 
-	blue 55% 55.5%, transparent 55% 60.5%, 
-	blue 60.5% 61%, transparent 61% 66%, 	
-	blue 66% 66.5%, transparent 66.5% 71.5%, 
-	blue 71.5% 72%, transparent 72% 77%, 
-	blue 77% 77.5%, transparent 77.5% 82.5%, 
-	blue 82.5% 83%, transparent 83% 88%,  
-	blue 88% 88.5%, transparent 88.5% 93.5%, 
-	blue 93.5% 94%, transparent 94% 99%,
-	blue 99% 99.5%, transparent 99.5% 100%),
-	 linear-gradient(-60deg, 
-	blue 0% .5%, transparent .5% 5.5%, 
-	blue 5.5% 6%, transparent 6% 11%, 
-	blue 11% 11.5%, transparent 11.5% 16.5%, 	
-	blue 16.5% 17%, transparent 17% 22%, 
-	blue 22% 22.5%, transparent 22.5% 27.5%, 
-	blue 27.5% 28%, transparent 28% 33%, 
-	blue 33% 33.5%, transparent 33.5% 38.5%,  
-	blue 38.5% 39%, transparent 39% 44%, 
-	blue 44% 44.5%, transparent 44.5% 49.5%,
-	blue 49.5% 51%, transparent 51% 55%, 	 
-	blue 55% 55.5%, transparent 55% 60.5%, 
-	blue 60.5% 61%, transparent 61% 66%, 	
-	blue 66% 66.5%, transparent 66.5% 71.5%, 
-	blue 71.5% 72%, transparent 72% 77%, 
-	blue 77% 77.5%, transparent 77.5% 82.5%, 
-	blue 82.5% 83%, transparent 83% 88%,  
-	blue 88% 88.5%, transparent 88.5% 93.5%, 
-	blue 93.5% 94%, transparent 94% 99%,
-	blue 99% 99.5%, transparent 99.5% 100%), 
-	  linear-gradient( 180deg, 
-	blue 0% .5%, transparent .5% 5.5%, 
-	blue 5.5% 6%, transparent 6% 11%, 
-	blue 11% 11.5%, transparent 11.5% 16.5%, 	
-	blue 16.5% 17%, transparent 17% 22%, 
-	blue 22% 22.5%, transparent 22.5% 27.5%, 
-	blue 27.5% 28%, transparent 28% 33%, 
-	blue 33% 33.5%, transparent 33.5% 38.5%,  
-	blue 38.5% 39%, transparent 39% 44%, 
-	blue 44% 44.5%, transparent 44.5% 49.5%,
-	blue 49.5% 51%, transparent 51% 55%, 	 
-	blue 55% 55.5%, transparent 55% 60.5%, 
-	blue 60.5% 61%, transparent 61% 66%, 	
-	blue 66% 66.5%, transparent 66.5% 71.5%, 
-	blue 71.5% 72%, transparent 72% 77%, 
-	blue 77% 77.5%, transparent 77.5% 82.5%, 
-	blue 82.5% 83%, transparent 83% 88%,  
-	blue 88% 88.5%, transparent 88.5% 93.5%, 
-	blue 93.5% 94%, transparent 94% 99%,
-	blue 99% 99.5%, transparent 99.5% 100%  );
-    background-size: 50% 50%, 50% 50%, 100% 50%;
-    background-position: top right, top left, bottom;
-    background-repeat: no-repeat;
-    opacity: .7;
-}
 #designCarousel .container:after {
 	
 }
@@ -469,30 +397,37 @@ header .container,  #main .menuitems ul {
 	flex: 1;
 	flex-wrap: wrap;
 	margin: 60px 40px -20px 40px;
-	padding: 0px
+	padding: 0px;
+	margin-bottom: 22px;
 }
 #process #chevron ol li {
 	text-align: center;
     flex: 1;
 	min-width: 120px;
 	min-height: 50px;
+
+	line-height: 40px;
+	font-size: 28px;
 }
 #process #chevron ol li:after {
     content: '»';
-    color: var(--text);
     padding: -2px;
-    font-size: 17px;
+    font-size: 28px;
     width: 0;
     height: 0;
-    border-top: 10px solid transparent;
-    border-left: 24px solid var(--text);
-    border-bottom: 11px solid transparent;
+color: white;
+  	background: -webkit-linear-gradient(45deg, purple, pink, orange, sienna, orange, pink, purple);
+  	-webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;
     z-index: 2;
 }
 #process #chevron ol li a {
-	
     padding: 10px;
     margin-bottom: 20px;
+	background-image: linear-gradient(60deg, purple, blue);
+    border-radius: 5%;
+    font-size: 33px;
+
 }
 #process .container .carousel-inner {
     display: flex;
@@ -502,12 +437,14 @@ header .container,  #main .menuitems ul {
 	margin: 0 auto;
 	height: 60vh;
     overflow: hidden;
-	box-sizing: border-box
+	box-sizing: border-box;
+	max-width: 1250px;
 }
 #process .container .carousel-inner #carousel-items {
 	display: flex;
     flex-wrap: wrap;
 	transition: 2s transform;
+	flex-direction: column;
 }
 #process .container .carousel-inner:before, #process .container .carousel-inner #carousel-items:before {
 	display: table;
@@ -518,13 +455,15 @@ header .container,  #main .menuitems ul {
 	flex-grow: 1;
     display: flex;
     align-items: center;
-	    position: relative;
+	position: relative;
     padding: 100px 20px;
     border: 1px var(--border) solid;
     width: 100%;
     min-height: 220px;
     background: var(--background);
-	margin-top: 30px;
+	margin-top: 60px;
+	min-width: 700px;
+	min-height: 500px;
 }
 #process .container .carousel-inner  .item:before {
 	content: "";
@@ -689,7 +628,187 @@ header .container,  #main .menuitems ul {
 }
 
 	
+/*RESUME*/
+#resume .container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	justify-content: center;
+}
+#resume .container h1 {
+	width: 100vw;
+}
+#resume .container .resumetopics {
+	flex: 1;
+	align-self: flex-start;
+	max-width: 250px;
+}
+#resume .container .resumetopics .cb p {
+    background: linear-gradient(45deg, purple, pink, orange, sienna, orange, pink, purple); 
+
+}
+#resume .container .resumetopics .cb p a {
+    -webkit-text-fill-color: white;
+	text-decoration: none;
+
+}
+
+ #resume #portfolio {
+	display: none;
+}
+#resume h3 {
+	font-size: 1.5em;
+	line-height:	2.5em;
+	text-align: center;
 	
+}
+#resume > .container > .subsections  {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: max-content;
+    height: 80vh;
+    flex: 1;
+    margin: 0 auto;
+    flex-direction: column;
+    scroll-behavior: smooth;
+    scroll-snap-type: mandatory;
+    scroll-snap-type: both mandatory;
+    overscroll-behavior-x: contain;
+    overflow-x: scroll;
+}
+#resume > .container > .subsections  > div {
+   flex: 1;
+   align-self: stretch;
+   margin: 0px 1vw;
+   padding: 2vw;
+   position: relative;
+   width: 100%;
+   justify-content: top;
+   align-items: top;
+   min-width: 250px;
+}
+
+#resume .container .resumetopics .cb {
+	flex: 1;
+	text-align: center;   
+}
+#skills-sub-types > h4, #experience p, #education .content h4, #hobbies > div > div > div {
+	font-family: 'VT323', 'DotGothic16', sans-serif, 'Monoton', cursive;
+	box-sizing: border-box;
+	text-align: center;
+    border-color: #ddd;
+	min-width: 100%;
+	padding: 10px;
+	font-weight: bold;
+	font-size: 2em;
+}
+#skills-sub-types > h4:hover,   #experience p:hover, #education .content h4:hover, #hobbies > div > div > div.box:hover, #process #chevron ol li a:hover, #process #chevron ol li a.active {
+    font-weight: 900;
+	transition: background .5s, color .5s;
+	text-decoration: none;
+}
+#process #chevron ol li a:hover, #process #chevron ol li a.active {
+   border-radius: 0px;
+}
+#experience ul {
+	padding: 0px;
+	margin: 0px;
+	list-style-type: none;
+	padding-left: 30px;
+}
+
+#skills-sub-types > div.boxes,  #experience ul li, #education .content p, #hobbies > div > div > div.unbox  {
+	display: none;
+	border-top: 1px #ccc solid;
+	padding: 20px;
+	margin: 0px;
+}
+
+#hobbies > div > div > div.unbox.block p, #hobbies > div > div > div.unbox.block ul li {
+	font-size: 1em;
+	font-weight: normal
+}
+#experience ul.block li, .block {
+	display: block !important;
+}
+
+#skills-sub-types div.boxes.expand {
+ 	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-content: center;
+	justify-content: space-around;
+	margin: 0px;
+	padding: 20px;
+}	
+#skills-sub-types div.boxes .box {
+	max-width: 80px;
+ 	max-height: 120px;
+	text-align: center;
+}
+#skills-sub-types div.boxes.expand .box svg {
+	display: inline-block;
+	vertical-align: middle;
+}
+#skills-sub-types div.boxes.expand .box svg text {
+	transition: stroke 20s linear forwards;
+	stroke: var(--background);
+}
+
+@media all and (max-width: 700px) {
+	#home .container {
+		transform: scale(0.5,0.5);
+		margin-left: -119px;
+	}
+	#process .container h2 {
+		font-size: 1.5em
+	}
+	#process #chevron ol {
+		margin: 0px;
+	}
+	#process #chevron ol li {
+		min-width: unset;
+		min-height: unset;
+		font-size: 16px;
+		line-height: 22px;
+	}
+	#process .container .carousel-inner .item h2 {
+		display: none 
+	}
+	#process .container .carousel-inner .item { 
+		padding: 0px;
+	}
+	#resume .container .resumetopics {
+		display: none;
+	}
+	.projects .project figure img {
+		width: 200px;
+		height: 200px;
+	}
+	.projects  {
+	   margin-top: 90px;
+	}
+	
+#process .container .carousel-inner .item {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: auto;
+    text-align: center;
+}
+	#process .container .carousel-inner .item .card {
+		margin-top: 0px;
+	}
+	#process .container .carousel-inner .item .card-body .card-text {
+		display: none
+	}
+	.modal .modal-content .modal-body .item {
+		min-width: unset;
+	}
+}
 
 
 /** UNUSED TRIANGLES

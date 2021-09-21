@@ -91,7 +91,7 @@ var nowActive = 0;
 var carouselInner = document.querySelector('#designCarousel div.carousel-inner');
 var carouselInnerItem = document.querySelectorAll('#designCarousel div.carousel-inner div.item');
 var carouselInnerItems;
-var transitionCalculation = 0;
+var tags = ['discover', 'define', 'design', 'develop', 'deploy']
 
 chevron[nowActive].classList.add('active');
 
@@ -99,7 +99,8 @@ carouselInnerItems = document.createElement('div');
 carouselInnerItems.setAttribute('id','carousel-items');
 
 for (b = 0; b < carouselInnerItem.length; b++) {	
-	carouselInnerItems.appendChild(carouselInnerItem[b]);
+	carouselInnerItems.appendChild(carouselInnerItem[b]);			carouselInnerItem[b].setAttribute('id', tags[b]);
+	
 }
 
 carouselInner.prepend(carouselInnerItems);
@@ -109,15 +110,8 @@ for (d = 0; d < chevron.length; d++) {
 		chevron[d].addEventListener('click', function (e) {
 			chevron[nowActive].classList.remove('active');
 			this.classList.add('active');
-				nowActive = this.parentNode.dataset.slideTo;
-			
-			var vw = Math.max(document.documentElement.clientWidth);
-			if  (vw > 500) {
-				transitionCalculation = nowActive * -464;
-			} else {
-				transitionCalculation = nowActive * -720;
-			}
-			carouselInnerItems.style.transform = 'translateY('+transitionCalculation+'px)';
+			nowActive = this.parentNode.dataset.slideTo;
+			window.location.hash = ('#' + (this.innerHTML).toLowerCase());
 			
 		});
 }
