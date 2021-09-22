@@ -91,7 +91,7 @@ var nowActive = 0;
 var carouselInner = document.querySelector('#designCarousel div.carousel-inner');
 var carouselInnerItem = document.querySelectorAll('#designCarousel div.carousel-inner div.item');
 var carouselInnerItems;
-var tags = ['discover', 'define', 'design', 'develop', 'deploy']
+var transitionCalculation = 0;
 
 chevron[nowActive].classList.add('active');
 
@@ -99,8 +99,7 @@ carouselInnerItems = document.createElement('div');
 carouselInnerItems.setAttribute('id','carousel-items');
 
 for (b = 0; b < carouselInnerItem.length; b++) {	
-	carouselInnerItems.appendChild(carouselInnerItem[b]);			carouselInnerItem[b].setAttribute('id', tags[b]);
-	
+	carouselInnerItems.appendChild(carouselInnerItem[b]);
 }
 
 carouselInner.prepend(carouselInnerItems);
@@ -110,8 +109,11 @@ for (d = 0; d < chevron.length; d++) {
 		chevron[d].addEventListener('click', function (e) {
 			chevron[nowActive].classList.remove('active');
 			this.classList.add('active');
-			nowActive = this.parentNode.dataset.slideTo;
-			window.location.hash = ('#' + (this.innerHTML).toLowerCase());
+				nowActive = this.parentNode.dataset.slideTo;
+
+				transitionCalculation = carouselInnerItems.children[nowActive].offsetTop * -1;
+
+			carouselInnerItems.style.transform = 'translateY('+transitionCalculation+'px)';
 			
 		});
 }
@@ -245,6 +247,31 @@ for (n = 0;  n < hobbiesHeading.length; n++) {
    hobbiesHeading[n].addEventListener('click', function (e) {
 	   	   this.nextSibling.nextSibling.classList.toggle("block");
 	});
+}
+
+//RESUME ITEMS
+var w;
+var restopic = document.querySelectorAll('#resume .container .resumetopics .cb');
+var activeNow = 0;
+var subsections = document.querySelector('.subsections');
+var subsectionsDiv = document.querySelectorAll('.subsections > div');
+var subsectionsItems;
+var moveCalc = 0;
+
+console.log(restopic[0], activeNow, subsections, subsectionsDiv, subsectionsItems, moveCalc);
+restopic[activeNow].classList.add('active');
+
+
+
+for (w = 0; w < restopic.length; w++) {	
+		    restopic[w].addEventListener('click', function (e) {
+				restopic[activeNow].classList.remove('active');
+				this.classList.add('active');
+				activeNow = this.children[0].dataset.slideTo;
+				
+				window.location.hash =  this.children[0].dataset.target;
+			
+		});
 }
 
 

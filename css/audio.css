@@ -464,18 +464,9 @@ color: white;
 	margin-top: 60px;
 	min-width: 700px;
 	min-height: 500px;
+	max-width: 900px;
 }
-#process .container .carousel-inner  .item:before {
-	content: "";
-    position: absolute;
-    display: block;
-    top: 0;
-    left: 0;
-    width: 50%;
-    height: 100%;
-    background: rgba(255,255,255,0.05);
-    pointer-events: none;
-}
+
 #process .container .carousel-inner  .item h2 {
     position: absolute;
     top: 60px;
@@ -635,6 +626,10 @@ color: white;
 	flex-wrap: wrap;
 	align-items: flex-start;
 	justify-content: center;
+	width: 100vw;
+	height: 100vh;
+	background-image:linear-gradient(100deg, transparent, pink, transparent);
+
 }
 #resume .container h1 {
 	width: 100vw;
@@ -726,7 +721,9 @@ color: white;
 	padding: 20px;
 	margin: 0px;
 }
-
+#education {
+	min-height: 50vh;
+}
 #hobbies > div > div > div.unbox.block p, #hobbies > div > div > div.unbox.block ul li {
 	font-size: 1em;
 	font-weight: normal
@@ -757,14 +754,84 @@ color: white;
 	transition: stroke 20s linear forwards;
 	stroke: var(--background);
 }
+#contact .container {
+	width: 100vw;
+	height: 100vh;
+	background-image:linear-gradient(225deg, transparent, pink, transparent);
+}
+
 
 @media all and (max-width: 700px) {
+		#home .container {
+		transform: scale(0.7,0.7);
+		margin-left: -60px;
+	}
+	header .container {
+	align-items: center;
+}
+nav#main .menuitems:before {
+	content: '☰';
+	display: block;
+    color: var(--text);
+    text-align: right;
+    padding: 10px 40px;
+}
+nav#main ul {
+  position: absolute;
+  visibility:hidden;
+  top: 3vh;
+  right: 0;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  gap: 0px;
+}
+#main .menuitems ul {
+	flex-direction: column;
+
+}
+nav .menuitems:hover ul li{
+	visibility:visible;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	min-width: 200px;
+}
+nav#main li a {
+    width: 150px;
+	color: var(--quarternary);
+}
+nav#main .menuitems ul li:hover {
+	color: var(--text);
+	background: var(--primary); 
+	border-radius: 5%;
+}
+nav#main .menuitems ul li.dropdown ul.droptions {
+    display: none;
+}
+nav#main .menuitems ul li.dropdown:hover ul.droptions {
+	display: flex;
+    right: 140px;
+	top: -40px;
+}
+	#resume .container .resumetopics {
+		display: none;
+	}
+	.modal .modal-content .modal-body .item img
+	{
+		max-width: 200px;
+	}
+}
+@media all and (max-width: 450px) {
+	h1 {
+		font-size: 2em;
+	}
 	#home .container {
 		transform: scale(0.5,0.5);
 		margin-left: -119px;
 	}
 	#process .container h2 {
-		font-size: 1.5em
+		font-size: 1.5em;
+		
 	}
 	#process #chevron ol {
 		margin: 0px;
@@ -772,18 +839,19 @@ color: white;
 	#process #chevron ol li {
 		min-width: unset;
 		min-height: unset;
-		font-size: 16px;
+				font-size: 16px;
+		line-height: 22px;
+
+	}
+	#process #chevron ol li  a {
+			font-size: 16px;
 		line-height: 22px;
 	}
-	#process .container .carousel-inner .item h2 {
-		display: none 
-	}
+	
 	#process .container .carousel-inner .item { 
 		padding: 0px;
 	}
-	#resume .container .resumetopics {
-		display: none;
-	}
+
 	.projects .project figure img {
 		width: 200px;
 		height: 200px;
@@ -798,18 +866,37 @@ color: white;
     align-items: center;
     min-width: auto;
     text-align: center;
+	max-height : 50vh;
 }
 	#process .container .carousel-inner .item .card {
 		margin-top: 0px;
+		width: 100%;
 	}
-	#process .container .carousel-inner .item .card-body .card-text {
-		display: none
+	#process .container .carousel-inner .item .card:nth-child(3), #process .container .carousel-inner .item .card:nth-child(4)  {
+		margin-top: -60px;
 	}
+	#portfolios div div.controls {
+		bottom: 30px;
+		transform: scale(.8);
+		right: auto;
+	}
+
 	.modal .modal-content .modal-body .item {
 		min-width: unset;
 	}
-}
 
+	#process .container .carousel-inner .item h2, #process .container .carousel-inner .item:hover h2 {
+		display:none;
+		font-size: 1.5em;
+				top: -30px;
+    color: rgba(255,255,255, 0.8);
+	text-shadow: 2px 3px var(--accent);
+	transition: top 1s, color 1s, text-shadow 1s;
+ 	}
+		#process .container .carousel-inner .item .card-body .card-text {
+		display: none
+	}
+}
 
 /** UNUSED TRIANGLES
 #portfolios .container .controls {
