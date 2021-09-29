@@ -258,7 +258,6 @@ var subsectionsDiv = document.querySelectorAll('.subsections > div');
 var subsectionsItems;
 var moveCalc = 0;
 
-console.log(restopic[0], activeNow, subsections, subsectionsDiv, subsectionsItems, moveCalc);
 restopic[activeNow].classList.add('active');
 
 
@@ -275,5 +274,154 @@ for (w = 0; w < restopic.length; w++) {
 }
 
 
+//CHATTER BOX
+var respLS = 'These are the commands I recognize: <br> (C) or (close) to close this modal.<br> (O) or (open) to open this modal.<br> (N) or (navigation) to learn how to navigate this site without a mouse.<br> (Q) or (questions) to see what I can answer.<br> (S) or (start) or (stop) to switch between talk and text.<br> (Talk) to turn microphone on & issue voice commands. <br> (Text) to chat via text messages. <br> (ls) to view all my commands. <br> Remember "CONQST". ';
+var respTxt =  'Great - lets\'s text!  Would you like to see a list of questions?  Type (Q).';
+var respTlk =  'Great - lets\'s talk!  Would you like to see a list of questions?  Type (Q).';
+var respNav =  ' Sorry, I\'m not ready yet! Soon - to navigate my website without a mouse, you\'ll close this window by saying or typing (C) or (close). Then, select: <br> (' +  '\u21B3'   + 'Tab) to navigate through each link. <br>(M) to select the menu. <br>(L) or (←) to move left.<br> (R)  or (→) to move right.';
+
+var terminalUX = document.createElement('div');
+terminalUX.setAttribute('id', 'terminalUX');
+terminalUX.setAttribute('class', 'modal');
+terminalUX.setAttribute('role', 'dialog');
+terminalUX.innerHTML = '<p>Hello World! I\'m Alter-Ego B! ' + respLS + ' <br>Would you like to "Talk" or "Text"?</p>';
+document.querySelector('body').appendChild(terminalUX);
+
+var chat = document.querySelector('#terminalUX');
+var startstop = true;
+var navigation = false;
+var chatResponse, response;
+var keycode = '';
+var textDisplay;
+var temp;
+
+txtDisplay();
+
+//KEYPRESS 
+
+document.addEventListener("keydown", function (e) {
+    console.log ( e.key, keycode);	
+	if (!navigation) {
+		
+			if (e.key == 'Backspace') {
+				keycode = keycode.slice(0, -1);
+				textDisplay.innerHTML = keycode + '<blink>_</blink>';
+			} else if (e.key == 'Enter') {		
+				respond(keycode);
+				keycode = '';
+			} else {
+				keycode += e.key;
+				textDisplay.innerHTML = keycode + '<blink>_</blink>';
+				chat.appendChild(textDisplay);
+			}
+	} else {
+			var chars = 'oTabLRArrowLeftArrowRight';
+			if (chars.includes(e.key)) {
+				if (e.key.toLowerCase() == 'o') {
+				   respond(e.key);
+				}  else if (e.key.toLowerCase() == 'tab') {
+				   navQueues(e.key);
+				}  if ((e.key.toLowerCase() == 'l') || (e.key.toLowerCase() == 'arrowleft')) {
+				   navQueues(e.key);
+				}  if ((e.key.toLowerCase() == 'r') || (e.key.toLowerCase() == 'arrowright')) {
+				   navQueues(e.key);
+				}  
+			}
+	}
+});
 
 
+//SPEECH RECOGNITION
+if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
+
+		var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+		var SpeechGrammarList = window.SpeechGrammarList || window.webkitSpeechGrammarList;
+		var SpeechRecognitionEvent = window.SpeechRecognitionEvent || window.webkitSpeechRecognitionEvent;
+		
+		var colors = [ 'aqua' , 'azure' , 'beige', 'bisque', 'black', 'blue', 'brown', 'chocolate', 'coral' ];
+		var grammar = '#JSGF V1.0; grammar colors; public <color> = ' + colors.join(' | ') + ' ;'
+		
+		var recognition = new window.SpeechRecognition();
+		recognition.interimResults = false;
+	
+		recognition.addEventListener('result', function(e) {
+			if (e.results[0].isFinal) {
+				respond(e.results[0][0].transcript);
+			}
+		});
+		
+		recognition.addEventListener('end', function (e) {
+			if (startstop == true) {
+				recognition.start();
+			} else if (startstop == false) {
+				recognition.stop();	
+			}
+		});
+		
+		
+}
+
+
+
+function respond(convo) {
+			chatResponse = document.createElement('p');
+			chatResponse.innerHTML = ">> " + convo;
+			chat.append(chatResponse);
+			convo = convo.toLowerCase();
+			response = document.createElement('p');
+			if ( convo == 'hello') {
+				response.innerHTML = 'Hello! Nice to meet you!';
+			} else if ( convo == 'text') {
+				startstop = false;
+				response.innerHTML = respTxt;
+			} else if (convo == 'talk') {
+				startstop = true;
+				response.innerHTML = respTlk;
+				recognition.start();
+			}  else if (convo == 'ls') {
+				response.innerHTML = respLS;
+			}  else if ((convo == 's') || (convo == 'stop') || (convo == 'start')) {
+				if (startstop) {
+					response.innerHTML = respTxt;
+				} else {
+					response.innerHTML = respTxt;
+					recognition.start();
+				}
+				startstop = !startstop;
+			}  else if ((convo == 'q') || (convo == 'questions')) {
+				response.innerHTML = 'Q';
+			}  else if ((convo == 'n') || (convo == 'navigation')) {
+				response.style.lineHeight = '34px';
+				response.innerHTML = respNav;
+			}  else if ((convo == 'o') || (convo == 'open')) {
+				response.innerHTML = 'Hello again! I\'m open for business. What can I do for you?';				
+				chat.classList.remove('fade');
+				navigation = false;
+			} else if ((convo == 'c') || (convo == 'close')) {
+				response.innerHTML = 'That was fun! Chat soon.';
+				chat.classList.add('fade');
+				navigation = true;
+			} else {
+				response.innerHTML = 'Sorry - I didn\'t understand ' + convo + '. Please try again.'; 
+			}
+			temp = document.querySelector('#temp');
+			temp.parentNode.removeChild(temp);
+			chat.append(response); 
+			txtDisplay();
+}
+
+function navQueues(que) {
+	console.log(que);
+	
+}
+
+function txtDisplay() {
+			textDisplay = document.createElement('p');
+			textDisplay.setAttribute('id','temp');
+			textDisplay.innerHTML = '<blink>_</blink>';
+			chat.appendChild(textDisplay);
+			
+			if (chat.scrollHeight > (document.body.scrollHeight*.8)) {
+				chat.scrollTo(0, chat.scrollHeight);
+			};
+}
