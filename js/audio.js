@@ -25,9 +25,6 @@ function createTabIndex(arr) {
 createTabIndex(x);
 
 
-
-
-
 /*PORTFOLIO ARROWS*/
 var pcontroller = document.querySelector('#portfolios div div.controls');
 var arrowup = document.createElement('div');
@@ -293,38 +290,45 @@ var navigation = false;
 var chatResponse, response;
 var keycode = '';
 var textDisplay;
-var temp;
+var temp, vw, sw;
 
 txtDisplay();
 
 //KEYPRESS 
 
 document.addEventListener("keydown", function (e) {
-    console.log ( e.key, keycode);	
+	if (e.key) {
+		 var key = e.key.toLowerCase();
+	} else {
+		var code = e.which || e.keyCode;
+		var key  = String.fromCharCode(code).toLowerCase();
+	}
 	if (!navigation) {
 		
-			if (e.key == 'Backspace') {
+			if (key == 'backspace') {
 				keycode = keycode.slice(0, -1);
 				textDisplay.innerHTML = keycode + '<blink>_</blink>';
-			} else if (e.key == 'Enter') {		
+			} else if (key == 'enter') {		
 				respond(keycode);
 				keycode = '';
 			} else {
-				keycode += e.key;
+				keycode += key;
 				textDisplay.innerHTML = keycode + '<blink>_</blink>';
 				chat.appendChild(textDisplay);
 			}
 	} else {
-			var chars = 'oTabLRArrowLeftArrowRight';
-			if (chars.includes(e.key)) {
-				if (e.key.toLowerCase() == 'o') {
-				   respond(e.key);
-				}  else if (e.key.toLowerCase() == 'tab') {
-				   navQueues(e.key);
-				}  if ((e.key.toLowerCase() == 'l') || (e.key.toLowerCase() == 'arrowleft')) {
-				   navQueues(e.key);
-				}  if ((e.key.toLowerCase() == 'r') || (e.key.toLowerCase() == 'arrowright')) {
-				   navQueues(e.key);
+			var chars = 'olTabRArrowLeftArrowRight';
+			if (chars.toLowerCase().includes(key)) {
+				if (key == 'o') {
+				   respond(key);
+				}  else if (key == 'tab') {
+				   navQueues(key);
+				} else  if ((key == 'm')) {
+				   navQueues(key);
+				} else if ((key == 'l')  || (key == 'arrowleft')) {
+				   navQueues(key);
+				}  else if ((key == 'r') || (key  == 'arrowright')) {
+				   navQueues(key);
 				}  
 			}
 	}
@@ -411,8 +415,19 @@ function respond(convo) {
 }
 
 function navQueues(que) {
-	console.log(que);
-	
+			 vw = window.clientWidth;
+			 sw = window.querySelector('body').offsetWidth;
+			 que = que.toLowerCase();
+			 console.log(que);
+			 if ((que == 'm') || (que == 'menu')) {
+				x[1].focus();
+								console.log(x[1].focus());
+
+			}  else if ((que == 'l') || (que == 'arrowleft')) {
+				console.log(vw, sw);
+			}  else if ((que == 'r') || (que == 'arrowright')) {
+				console.log(vw, sw);
+			}
 }
 
 function txtDisplay() {
